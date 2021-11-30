@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,10 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 //Login
-Route::get('/login', function () {});
+Route::get('/login',[Controllers\PageController::class,'loginScreen'])->name('logScreen');
+Route::post('/userpost',[Controllers\BackController::class,'loginControl'])->name('logpost');
 //Panel Routeları
 Route::prefix('/admin')->name('admin.')->group(function () {
-
+    Route::get('/dashboard',[Controllers\PageController::class,'dashboard'])->name('dashboard');
 });
 //Front Routeları
 Route::prefix('/pages')->name('front.')->group(function () {
