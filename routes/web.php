@@ -12,7 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Anasayfa ve Login Routeları
 Route::get('/', function () {
     return view('welcome');
 });
+//Login
+Route::get('/login', function () {});
+//Panel Routeları
+Route::prefix('/admin')->name('admin.')->group(function () {
+
+});
+//Front Routeları
+Route::prefix('/pages')->name('front.')->group(function () {
+
+});
+
