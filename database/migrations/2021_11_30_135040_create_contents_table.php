@@ -15,7 +15,15 @@ class CreateContentsTable extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('category_id');
+            $table->string('title');
+            $table->string('content');
+            $table->text('photo_1')->nullable();
+            $table->text('photo_2')->nullable();
+            $table->text('photo_3')->nullable();
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
