@@ -24,6 +24,6 @@ Route::prefix('/admin')->name('admin.')->group(function () {
 });
 //Front Routeları
 Route::prefix('/pages')->name('front.')->group(function () {
-
+    Route::get('/{url_slug}/{content_url_slug}',[Controllers\PageController::class,'contentPages'])->name('contentPage');
 });
 

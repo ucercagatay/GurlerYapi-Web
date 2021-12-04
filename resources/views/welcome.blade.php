@@ -49,7 +49,7 @@
 {{--                        <li><a href="">ssss</a></li>--}}
 {{--                    </ul>--}}
                 </li>
-                @foreach($categories as $category)
+                    @foreach($categories as $category)
                     <li><a href="work.html">{{$category->category_name}}</a></li>
                     @if($category->sub_category   !=NULL)
                     <a href="/{{$category->url_slug}}">{{$category->sub_category}}</a> <br>
@@ -60,7 +60,8 @@
                     @if($category->sub_category_3   !=NULL)
                         <a href="/{{$category->url_slug}}">{{$category->sub_category_3}}</a>
                     @endif
-                @endforeach
+                    @endforeach
+
             </ul>
         </nav>
 
