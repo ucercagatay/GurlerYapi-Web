@@ -49,10 +49,18 @@
 {{--                        <li><a href="">ssss</a></li>--}}
 {{--                    </ul>--}}
                 </li>
-                <li><a href="work.html">Projeler</a></li>
-                <li><a href="about.html">Hakkımızda</a></li>
-                <li><a href="services.html">Referanslar</a></li>
-                <li><a href="contact.html">İLETİŞİM</a></li>
+                @foreach($categories as $category)
+                    <li><a href="work.html">{{$category->category_name}}</a></li>
+                    @if($category->sub_category   !=NULL)
+                    <a href="/{{$category->url_slug}}">{{$category->sub_category}}</a> <br>
+                    @endif
+                    @if($category->sub_category_2   !=NULL)
+                       <a href="/{{$category->url_slug}}">{{$category->sub_category_2}}</a> <br>
+                    @endif
+                    @if($category->sub_category_3   !=NULL)
+                        <a href="/{{$category->url_slug}}">{{$category->sub_category_3}}</a>
+                    @endif
+                @endforeach
             </ul>
         </nav>
 

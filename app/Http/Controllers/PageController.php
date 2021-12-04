@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoryModel;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -14,5 +15,10 @@ class PageController extends Controller
     public function dashboard(){
         return view('back.dashboardpages.dashboard');
     }
-
+//Front Pages
+//MainPage
+public function mainPage(){
+        $categories=CategoryModel::where('language','türkçe')->get()->all();
+        return view('welcome',compact('categories'));
+}
 }

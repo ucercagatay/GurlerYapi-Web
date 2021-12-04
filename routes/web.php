@@ -13,9 +13,7 @@ use App\Http\Controllers;
 |
 */
 //Anasayfa ve Login Routeları
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[Controllers\PageController::class,'mainPage'])->name('mainpage');
 Route::post('/formpost',[Controllers\BackController::class,'newMessage'])->name('formPost');
 //Login
 Route::get('/login',[Controllers\PageController::class,'loginScreen'])->name('logScreen');
