@@ -17,6 +17,7 @@ class CreateFormsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('surname');
+            $table->string('language')->withcomment('DilSeçimi');
             $table->string('email');
             $table->string('phoneNumber');
             $table->string('option');

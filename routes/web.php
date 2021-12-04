@@ -16,6 +16,7 @@ use App\Http\Controllers;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::post('/formpost',[Controllers\BackController::class,'newMessage'])->name('formPost');
 //Login
 Route::get('/login',[Controllers\PageController::class,'loginScreen'])->name('logScreen');
 Route::post('/userpost',[Controllers\BackController::class,'loginControl'])->name('logpost');

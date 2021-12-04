@@ -14,4 +14,5 @@ class PageController extends Controller
     public function dashboard(){
         return view('back.dashboardpages.dashboard');
     }
+
 }

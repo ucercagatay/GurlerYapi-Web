@@ -18,6 +18,7 @@ class CreateContentsTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('title');
             $table->string('content');
+            $table->string('content_url_slug')->comment('url için girilicek');
             $table->text('photo_1')->nullable();
             $table->text('photo_2')->nullable();
             $table->text('photo_3')->nullable();

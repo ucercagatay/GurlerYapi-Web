@@ -16,6 +16,7 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('category_name');
+            $table->string('url_slug')->comment('Url adresi için girilicek');
             $table->string('sub_category')->nullable();
             $table->string('sub_category_2')->nullable();
             $table->string('sub_category_3')->nullable();
