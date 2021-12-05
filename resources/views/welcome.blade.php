@@ -50,15 +50,15 @@
 {{--                    </ul>--}}
                 </li>
                     @foreach($categories as $category)
-                    <li><a href="work.html">{{$category->category_name}}</a></li>
+                    <li><a href="{{Route('front.categoryPage',['language'=>$category->language,'url_slug'=>$category->url_slug])}}">{{$category->category_name}}</a></li>
                     @if($category->sub_category   !=NULL)
-                    <a href="/{{$category->url_slug}}">{{$category->sub_category}}</a> <br>
+                    <a href="{{Route('front.sub1_page',['language'=>$category->language,'url_slug'=>$category->url_slug,'sub_category'=>$category->sub_category])}}">{{$category->sub_category}}</a> <br>
                     @endif
                     @if($category->sub_category_2   !=NULL)
-                       <a href="/{{$category->url_slug}}">{{$category->sub_category_2}}</a> <br>
+                       <a href="{{Route('front.sub2_page',['language'=>$category->language,'url_slug'=>$category->url_slug,'sub_category_2'=>$category->sub_category_2])}}">{{$category->sub_category_2}}</a> <br>
                     @endif
                     @if($category->sub_category_3   !=NULL)
-                        <a href="/{{$category->url_slug}}">{{$category->sub_category_3}}</a>
+                        <a href="{{Route('front.sub3_page',['language'=>$category->language,'url_slug'=>$category->url_slug,'sub_category_3'=>$category->sub_category_3])}}">{{$category->sub_category_3}}</a>
                     @endif
                     @endforeach
 

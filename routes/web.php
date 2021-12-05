@@ -24,6 +24,14 @@ Route::prefix('/admin')->name('admin.')->group(function () {
 });
 //Front Routeları
 Route::prefix('/pages')->name('front.')->group(function () {
-    Route::get('/{url_slug}/{content_url_slug}',[Controllers\PageController::class,'contentPages'])->name('contentPage');
+   //Categori sayfası
+    Route::get('/{language}/{url_slug}',[Controllers\PageController::class,'categoryPage'])->name('categoryPage');
+   //Categori sayfası bitiş
+    //Sub category sayfaları
+    Route::get('/{language}/{url_slug}/{sub_category}',[Controllers\PageController::class,'contentPages'])->name('sub1_page');
+    Route::get('/{language}/{url_slug}/{sub_category_2}',[Controllers\PageController::class,'contentPages'])->name('sub2_page');
+    Route::get('/{language}/{url_slug}/{sub_category_3}',[Controllers\PageController::class,'contentPages'])->name('sub3_page');
+    //Sub category bitiş
+
 });
 

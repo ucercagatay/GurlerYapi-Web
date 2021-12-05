@@ -23,9 +23,13 @@ public function mainPage(Request $request){
         $contents=ContentModel::where('category_id',$request->category_id)->get()->all();
         return view('welcome',compact('categories','contents'));
 }
+public function categoryPage(){
+        $categories=CategoryModel::where('language','türkçe')->get()->all();
+        return view('front.pages.categoryPages',compact('categories'));
+}
 public function contentPages(){
         $categories=CategoryModel::where('language','türkçe')->get()->all();
         $contents=ContentModel::where('language','türkçe')->get()->all();
-        return view('back.front.contentPage',compact('categories','contents'));
+        return view('front.pages.contentPages',compact('categories','contents'));
 }
 }
