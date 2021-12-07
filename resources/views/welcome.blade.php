@@ -50,16 +50,18 @@
 {{--                    </ul>--}}
                 </li>
                     @foreach($categories as $category)
-                    <li><a href="{{Route('front.categoryPage',['language'=>$category->language,'url_slug'=>$category->url_slug])}}">{{$category->category_name}}</a></li>
+                    <li><a href="{{Route('front.categoryPage',['language'=>$category->language,'url_slug'=>$category->url_slug])}}">{{$category->category_name}}</a>
+                        <ul>
                     @if($category->sub_category   !=NULL)
-                    <a href="{{Route('front.sub1_page',['language'=>$category->language,'url_slug'=>$category->url_slug,'sub_category'=>$category->sub_category])}}">{{$category->sub_category}}</a> <br>
+                    <li><a href="{{Route('front.sub1_page',['language'=>$category->language,'url_slug'=>$category->url_slug,'sub_category'=>$category->sub_category])}}">{{$category->sub_category}}</a></li>
                     @endif
                     @if($category->sub_category_2   !=NULL)
-                       <a href="{{Route('front.sub2_page',['language'=>$category->language,'url_slug'=>$category->url_slug,'sub_category_2'=>$category->sub_category_2])}}">{{$category->sub_category_2}}</a> <br>
+                            <li> <a href="{{Route('front.sub2_page',['language'=>$category->language,'url_slug'=>$category->url_slug,'sub_category_2'=>$category->sub_category_2])}}">{{$category->sub_category_2}}</a></li>
                     @endif
                     @if($category->sub_category_3   !=NULL)
-                        <a href="{{Route('front.sub3_page',['language'=>$category->language,'url_slug'=>$category->url_slug,'sub_category_3'=>$category->sub_category_3])}}">{{$category->sub_category_3}}</a>
+                            <li> <a href="{{Route('front.sub3_page',['language'=>$category->language,'url_slug'=>$category->url_slug,'sub_category_3'=>$category->sub_category_3])}}">{{$category->sub_category_3}}</a></li>
                     @endif
+                        </ul></li>
                     @endforeach
 
             </ul>
@@ -437,12 +439,33 @@
                 </div>
             </div>
         </div>
-        <div class="colorlib-navi">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8156.998315639303!2d39.203692281906946!3d38.67597168995606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4076c01523587a39%3A0xdf454f9e53d46568!2zRWxhesSxxJ8gQXRhdMO8cmsgU3RhZHl1bXU!5e0!3m2!1str!2str!4v1638652709377!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <div class="colorlib-contact">
+{{--        <div class="colorlib-navi">--}}
+{{--            <div class="colorlib-narrow-content">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">--}}
+{{--                        <span class="heading-meta">Bize Ulaşın</span>--}}
+{{--                        <h2 class="colorlib-heading animate-box">İLETİŞİM</h2>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-        </div>
+{{--            <div class="colorlib-narrow-content">--}}
+{{--                <div class="row">--}}
+{{--                    <img src="{{asset("front/images/blog-2.jpg")}}" alt="">--}}
+{{--                    <div class="contact">--}}
+{{--                        <input type="text" placeholder="Ad-Soyad">--}}
+{{--                        <input type="email" placeholder="e-Mail">--}}
+{{--                        <input type="tel" placeholder="(0555)-555-55-55" pattern="([0-9]{4})[0-9]{3}-[0-9]{2}-[0-9]{2}">--}}
+{{--                        <select name="" id="">--}}
+{{--                            <option value="" disabled selected>Bilgi Almak İstenen Konular</option>--}}
+{{--                        </select>--}}
+{{--                        <textarea name="" id="" cols="90" rows="3" placeholder="Mesajınız"></textarea>--}}
+{{--                        <input type="submit">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8156.998315639303!2d39.203692281906946!3d38.67597168995606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4076c01523587a39%3A0xdf454f9e53d46568!2zRWxhesSxxJ8gQXRhdMO8cmsgU3RhZHl1bXU!5e0!3m2!1str!2str!4v1638652709377!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>--}}
+{{--        </div>--}}
     </div>
 </div>
 
