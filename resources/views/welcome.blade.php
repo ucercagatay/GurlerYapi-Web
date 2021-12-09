@@ -33,7 +33,7 @@
     <!--[if lt IE 9]>
     <script src="{{asset("front/js/respond.min.js")}}"></script>
     <![endif]-->
-
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
 <div id="colorlib-page">
@@ -145,7 +145,7 @@
             <div class="colorlib-narrow-content">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url({{asset("front/images/img_bg_2.jpg")}})">
+                        <div class="about-img animate-box" data-animate-effect="fadeInLeft" style="    box-shadow: 0 0 20px 1px #0000006b; background-image: url({{asset("front/images/img_bg_2.jpg")}})">
                         </div>
                     </div>
                     <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
@@ -439,33 +439,80 @@
                 </div>
             </div>
         </div>
-{{--        <div class="colorlib-navi">--}}
-{{--            <div class="colorlib-narrow-content">--}}
-{{--                <div class="row">--}}
-{{--                    <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">--}}
-{{--                        <span class="heading-meta">Bize Ulaşın</span>--}}
-{{--                        <h2 class="colorlib-heading animate-box">İLETİŞİM</h2>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+        <div class="colorlib-navi">
+            <div class="colorlib-narrow-content">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+                        <span class="heading-meta">Bize Ulaşın</span>
+                        <h2 class="colorlib-heading animate-box">İLETİŞİM</h2>
+                    </div>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="icons">
+                        <img src="{{asset("images/s2.png")}}" alt="">
+                        <div class="contact-icons">
+                            <div class="contact-icon">
+                                <span class="icon">
+                                    <i class="fas fa-2x fa-phone-alt"></i>
+                                </span>
+                                0555 555 55 55
+                            </div>
+                            <div class="contact-icon">
+                                <span class="icon">
+                                    <i class="fas fa-2x fa-map-marker-alt"></i>
+                                </span>
+                                Kültür, 23100 Merkez/Elâzığ Merkez/Elazığ
+                            </div>
+                            <div class="contact-icon">
+                                <span class="icon">
+                                    <i class="fas fa-2x fa-envelope"></i>
+                                </span>
+                                gurleryapi@gmail.com
+                            </div>
 
-{{--            <div class="colorlib-narrow-content">--}}
-{{--                <div class="row">--}}
-{{--                    <img src="{{asset("front/images/blog-2.jpg")}}" alt="">--}}
-{{--                    <div class="contact">--}}
-{{--                        <input type="text" placeholder="Ad-Soyad">--}}
-{{--                        <input type="email" placeholder="e-Mail">--}}
-{{--                        <input type="tel" placeholder="(0555)-555-55-55" pattern="([0-9]{4})[0-9]{3}-[0-9]{2}-[0-9]{2}">--}}
-{{--                        <select name="" id="">--}}
-{{--                            <option value="" disabled selected>Bilgi Almak İstenen Konular</option>--}}
-{{--                        </select>--}}
-{{--                        <textarea name="" id="" cols="90" rows="3" placeholder="Mesajınız"></textarea>--}}
-{{--                        <input type="submit">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8156.998315639303!2d39.203692281906946!3d38.67597168995606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4076c01523587a39%3A0xdf454f9e53d46568!2zRWxhesSxxJ8gQXRhdMO8cmsgU3RhZHl1bXU!5e0!3m2!1str!2str!4v1638652709377!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>--}}
-{{--        </div>--}}
+                        </div>
+                    </div>
+                    <div class="whiteArea">
+                        <div class=" contact-form">
+                            <div>
+                                <div>
+                                    <label for="">Ad-Soyad</label>
+                                    <input type="text" placeholder="Ad-Soyad">
+                                </div>
+                                <div>
+                                    <label for="">E-Mail</label>
+                                    <input type="email" placeholder="e-Mail">
+                                </div>
+
+                            </div>
+                            <div>
+                                <div>
+                                    <label for="">Telefon Numarası</label>
+                                    <input type="tel" placeholder="(0555)-555-55-55" pattern="([0-9]{4})[0-9]{3}-[0-9]{2}-[0-9]{2}">
+                                </div>
+                                <div>
+                                    <label for="">Konu</label>
+                                    <select name="" id="">
+                                        <option value="" disabled selected>Bilgi Almak İstenen Konular</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <label for="">Mesajınız</label>
+                            <textarea name="" id="" cols="90" rows="3" placeholder="Mesajınız"></textarea>
+                            <input type="submit">
+                        </div>
+                        <div class="contact-image">
+                            <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h5>
+                            <img src="{{asset("front/images/contact.jpg")}}" alt="">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam debitis, eius, eligendi fuga impedit inventore officiis, repellat repellendus sequi totam ullam velit. </p>
+                        </div>
+                    </div>
+
+                </div>
+            <iframe style="    margin-top: 6vh; filter: invert(90%); border: 1px solid #ffffff;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8156.998315639303!2d39.203692281906946!3d38.67597168995606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4076c01523587a39%3A0xdf454f9e53d46568!2zRWxhesSxxJ8gQXRhdMO8cmsgU3RhZHl1bXU!5e0!3m2!1str!2str!4v1638652709377!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
     </div>
 </div>
 
