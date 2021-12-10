@@ -12,12 +12,21 @@
 *	Edit this section
 *
 * ======================================================= */
+html::-webkit-scrollbar {
+    width: 0px;
+    background-color: rgba(248, 248, 248, 0);
+}
+html::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #282826;
+}
 body {
     font-family: "Quicksand", Arial, sans-serif;
     font-weight: 400;
     font-size: 15px;
     line-height: 1.8;
     color: rgba(0, 0, 0, 0.7);
+    background: url("../../images/pattern2.png");
 }
 
 @media screen and (max-width: 992px) {
@@ -104,10 +113,11 @@ figure figcaption {
     left: 0;
     overflow-y: scroll;
     z-index: 1001;
-    background: #383e42;
+    background: #282826;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
+    box-shadow: 0 0 20px 2px #0000004a;
 }
 
 @media screen and (max-width: 1200px) {
@@ -135,7 +145,7 @@ figure figcaption {
     text-transform: uppercase;
     margin-bottom: 3em;
     display: block;
-    width: calc(100% + 5em);
+    width: calc(100% + 5em + 1px);
     margin-left: -3em;
     background-color: #FFC300;
     padding: 1em 0;
@@ -257,7 +267,7 @@ figure figcaption {
 
 #colorlib-aside .colorlib-footer {
     position: absolute;
-    bottom: 40px;
+    bottom: 0;
     right: 0;
     left: 0;
     font-size: 15px;
@@ -268,12 +278,7 @@ figure figcaption {
     width: 100%;
 }
 
-@media screen and (max-width: 768px) {
-    #colorlib-aside .colorlib-footer {
-        position: relative;
-        bottom: 0;
-    }
-}
+
 
 #colorlib-aside .colorlib-footer span {
     display: block;
@@ -282,8 +287,11 @@ figure figcaption {
 #colorlib-aside .colorlib-footer ul {
     padding: 0;
     margin: 0;
+    margin-bottom: 1vh;
 }
-
+#colorlib-aside .colorlib-footer small div{
+    font-size: 9px;
+}
 #colorlib-aside .colorlib-footer ul li {
     padding: 0;
     margin: 0;
@@ -889,7 +897,7 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
 .blog-entry {
     width: 100%;
     float: left;
-    background: #fff;
+    background: rgba(255, 255, 255, 0);
     margin-bottom: 3em;
 }
 
@@ -1276,6 +1284,9 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
     width: 25%;
     object-fit: contain;
 }
+.colorlib-navi .colorlib-narrow-content:nth-child(2){
+    padding: 0 1em;
+}
 .colorlib-navi .icons{
     background-color: #FFC300;
     display: flex;
@@ -1286,6 +1297,7 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
 .colorlib-navi .whiteArea{
     display: flex;
 }
+
 .colorlib-navi .contact-form{
     margin: 0 2% 0 5%;
     width: 61%;
@@ -1293,7 +1305,7 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
     flex-direction: column;
     background-color: white;
     margin-top: -8vh;
-    padding:5vh 5vh 0 5vh;
+    padding: 5vh;
     box-shadow: 0 0 20px 2px #0000004a;
 }
 .colorlib-navi .contact-image{
@@ -1306,6 +1318,26 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
     padding:5vh 5vh 0 5vh;
     box-shadow: 0 0 20px 2px #0000004a;
 }
+@media only screen and (max-width: 1300px) {
+    .colorlib-navi .whiteArea{
+        flex-direction: column;
+    }
+    .colorlib-navi .contact-form{
+        margin: 0 5%;
+        margin-top: -8vh;
+        width: 90%;
+    }
+    .colorlib-navi .contact-image{
+        margin-top: 4vh;
+        margin-left: 5%;
+        width: 50%;
+    }
+    .colorlib-navi .contact-image div {
+        border-bottom-right-radius: 20%;
+        border-top-right-radius: 20%;
+    }
+}
+
 .colorlib-navi .contact-image h5{
     font-weight: bold;
     font-size: 18px;
@@ -1313,6 +1345,7 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
 .colorlib-navi .contact-image img{
     object-fit: contain;
     max-height: 200px;
+    width: 100%;
 }
 
 .colorlib-navi .contact-form>div{
@@ -1327,10 +1360,22 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
 }
 .colorlib-navi .contact-form textarea{
     margin-bottom: 2vh;
+    padding: 0 1.5%;
+}
+.colorlib-navi .contact-form textarea:focus-visible{
+    outline: none;
 }
 .colorlib-navi .contact-form input[type="submit"]{
     height: 38px;
-    width: 20%;
+    width: max-content;
+    padding: 0 15px;
+    color: #ffffff;
+    background-color: #282826;
+    border: 1px solid #b9ab7d;
+    transition: 600ms all;
+}
+.colorlib-navi .contact-form input[type="submit"]:hover{
+    background-color: black;
 }
 .colorlib-navi .contact-form div label{
     display: block;
@@ -1338,10 +1383,99 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
 .colorlib-navi .contact-form div input{
     width: 100%;
     height: 38px;
+    padding: 0 3%;
 }
 .colorlib-navi .contact-form div select{
     width: 100%;
     height: 38px;
+    padding: 0 3%;
+}
+.colorlib-navi .contact-form div input:focus-visible{
+    outline: none;
+}
+.colorlib-navi .contact-form div select:focus-visible{
+    outline: none;
+}
+.colorlib-navi .contact-image div{
+    background: #282826;
+    padding: 2px 10px;
+    position: relative;
+    border-radius: 50px;
+    border: 1px solid #000000;
+    border-bottom-right-radius: 121%;
+    border-top-right-radius: 116%;
+}
+.colorlib-navi .contact-image div input{
+    border: 0;
+    padding: 4px;
+    width: calc(100% - 100px);
+    background: #28251f;
+    color: white;
+}
+.colorlib-navi .contact-image div input:focus-visible{
+    outline: none;
+}
+.colorlib-navi .contact-image label{
+    margin-top: 3vh;
+}
+.colorlib-navi .contact-image div{
+    margin-bottom: 2vh;
+}
+.colorlib-navi .contact-image div a{
+    position: absolute;
+    top: -1px;
+    right: -2px;
+    bottom: -1px;
+    background: none;
+    font-size: 16px;
+    padding: 0 20px 2px 20px;
+    background: #ffc300;
+    color: #fff;
+    transition: 0.3s;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.colorlib-navi .contact-image div a:hover{
+    background: #e3ae03;
+}
+@media only screen and (max-width: 1300px) {
+    .colorlib-navi .contact-image div{
+        border-bottom-right-radius: 50%;
+        border-top-right-radius: 50%;
+    }
+    .colorlib-navi .contact-image div a{
+        font-size: 10px;
+        padding: 0 10px 2px 10px;
+        right: -5%;
+    }
+
+}
+@media only screen and (max-width: 750px){
+    .colorlib-navi .contact-image{
+        width: 90%;
+    }
+    .colorlib-navi .contact-image div a {
+        position: absolute;
+        top: -1px;
+        right: -2px;
+        bottom: -1px;
+        background: none;
+        font-size: 16px;
+        padding: 0 20px 2px 20px;
+        background: #ffc300;
+        color: #fff;
+        transition: 0.3s;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .colorlib-navi .contact-image div {
+        border-bottom-right-radius: 54px;
+        border-top-right-radius: 54px;
+    }
 }
 .colorlib-navi .icons .contact-icons{
     width: 100%;
@@ -1352,12 +1486,30 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
 .colorlib-navi .icons img {
     width: 21%;
 }
+@media only screen and (max-width: 750px) {
+    .colorlib-navi .icons img{
+        width: 200px;
+    }
+    .colorlib-navi .icons .contact-icons {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+    }
+    .colorlib-navi .contact-form>div{
+        flex-direction: column;
+    }
+    .colorlib-navi .contact-form>div>div{
+        width: 100%;
+    }
+}
 .colorlib-navi .contact-icon{
     display: flex;
     align-items: center;
     font-size: 17px;
     font-weight: bold;
 }
+
 .colorlib-navi .contact-icon .icon{
     border-radius: 50%;
     border: 3px solid #272727;
@@ -1371,6 +1523,18 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
 }
 .colorlib-navi .contact-icon .icon i{
     color: #272727;
+}
+@media only screen and (max-width: 1300px) {
+    .colorlib-navi .contact-icon .icon i{
+        font-size: 15px;
+    }
+    .colorlib-navi .contact-icon{
+        font-size: 12px;
+    }
+    .colorlib-navi .contact-icon .icon {
+        width: 35px;
+        height: 35px;
+    }
 }
 .colorlib-navi .colorlib-narrow-content .contact input{
     width: 100%;
