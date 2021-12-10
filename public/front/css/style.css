@@ -1301,12 +1301,14 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
 .colorlib-navi .contact-form{
     margin: 0 2% 0 5%;
     width: 61%;
-    display: flex;
-    flex-direction: column;
     background-color: white;
     margin-top: -8vh;
     padding: 5vh;
     box-shadow: 0 0 20px 2px #0000004a;
+}
+.colorlib-navi .contact-form form{
+    display: flex;
+    flex-direction: column;
 }
 .colorlib-navi .contact-image{
     margin: 0 5% 0 2%;
@@ -1348,12 +1350,12 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
     width: 100%;
 }
 
-.colorlib-navi .contact-form>div{
+.colorlib-navi .contact-form form>div{
     display: flex;
     justify-content: space-between;
     margin-bottom: 2vh;
 }
-.colorlib-navi .contact-form>div>div{
+.colorlib-navi .contact-form form>div>div{
     display: flex;
     flex-direction: column;
     width: 49%;
@@ -1385,15 +1387,16 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
     height: 38px;
     padding: 0 3%;
 }
-.colorlib-navi .contact-form div select{
+.colorlib-navi .contact-form select{
     width: 100%;
     height: 38px;
-    padding: 0 3%;
+    padding: 0 1%;
+    margin-bottom: 2vh;
 }
 .colorlib-navi .contact-form div input:focus-visible{
     outline: none;
 }
-.colorlib-navi .contact-form div select:focus-visible{
+.colorlib-navi .contact-form select:focus-visible{
     outline: none;
 }
 .colorlib-navi .contact-image div{
@@ -1579,6 +1582,27 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
 }
 .colorlib-navi .colorlib-narrow-content .contact textarea:focus-visible{
     outline: none;
+}
+.colorlib-references{
+    margin-bottom: 10vh;
+}
+.colorlib-references .references{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.colorlib-references .references a{
+
+    margin: 1%;
+    width: calc(100% / 10);
+}
+.colorlib-references .references a img{
+    filter: grayscale(100%);
+    width: 100%;
+}
+.colorlib-references .references a:hover img{
+    filter: grayscale(0);
 }
 #map {
     width: 100%;

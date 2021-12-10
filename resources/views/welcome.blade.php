@@ -1,6 +1,5 @@
 @extends('Front.layout.app')
 @section('content')
-    @yield('content')
     <div id="colorlib-main">
         <aside id="colorlib-hero" class="js-fullheight">
             <div class="flexslider js-fullheight">
@@ -56,7 +55,6 @@
                 </ul>
             </div>
         </aside>
-
         <div class="colorlib-about">
             <div class="colorlib-narrow-content">
                 <div class="row">
@@ -95,7 +93,6 @@
                 </div>
             </div>
         </div>
-
         <div class="colorlib-services">
             <div class="colorlib-narrow-content">
                 <div class="row">
@@ -191,8 +188,7 @@
                 </div>
             </div>
         </div>
-
-        <div id="colorlib-counter" class="colorlib-counters" style="background-image: url({{asset("front/images/cover_bg_1.jpg")}}) " data-stellar-background-ratio="0.5">
+        <div class="colorlib-counters" id="colorlib-counter"  style="background-image: url({{asset("front/images/cover_bg_1.jpg")}}) " data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="colorlib-narrow-content">
                 <div class="row">
@@ -221,7 +217,6 @@
                 </div>
             </div>
         </div>
-
         <div class="colorlib-work">
             <div class="colorlib-narrow-content">
                 <div class="row">
@@ -312,7 +307,6 @@
                 </div>
             </div>
         </div>
-
         <div class="colorlib-blog">
             <div class="colorlib-narrow-content">
                 <div class="row">
@@ -355,6 +349,33 @@
                 </div>
             </div>
         </div>
+        <div class="colorlib-references">
+            <div class="colorlib-narrow-content">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+                        <span class="heading-meta">Bize Destek Verenler</span>
+                        <h2 class="colorlib-heading animate-box">REFERANSLARIMIZ</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="colorlib-narrow-content animate-box" data-animate-effect="fadeInLeft">
+                <div class="row">
+                    <div class="references">
+                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
+                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
+                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
+                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
+                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
+                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
+                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
+                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
+                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
+                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
+                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="colorlib-navi">
             <div class="colorlib-narrow-content">
                 <div class="row">
@@ -392,33 +413,41 @@
                     </div>
                     <div class="whiteArea">
                         <div class=" contact-form animate-box" data-animate-effect="fadeInLeft">
-                            <div>
+                            <form method="post" action="{{route('formPost')}}">
+                                @csrf
                                 <div>
-                                    <label for="">Ad-Soyad</label>
-                                    <input type="text" placeholder="Ad-Soyad">
-                                </div>
-                                <div>
-                                    <label for="">E-Mail</label>
-                                    <input type="email" placeholder="e-Mail">
-                                </div>
+                                    <div>
+                                        <label for="">Ad</label>
+                                        <input type="text" name="name" placeholder="Ad">
+                                    </div>
+                                    <div>
+                                        <label for="">Soyad</label>
+                                        <input type="text" name="surname" placeholder="Soyad">
+                                    </div>
 
-                            </div>
-                            <div>
-                                <div>
-                                    <label for="">Telefon Numarası</label>
-                                    <input type="tel" placeholder="(0555)-555-55-55" pattern="([0-9]{4})[0-9]{3}-[0-9]{2}-[0-9]{2}">
                                 </div>
                                 <div>
-                                    <label for="">Konu</label>
-                                    <select name="" id="">
-                                        <option value="" disabled selected>Bilgi Almak İstenen Konular</option>
-                                    </select>
-                                </div>
+                                    <div>
+                                        <label for="">Telefon Numarası</label>
+                                        <input type="tel" name="phoneNumber" placeholder="(0555)-555-55-55" pattern="([0-9]{4})[0-9]{3}-[0-9]{2}-[0-9]{2}">
+                                    </div>
+                                    <div>
+                                        <label for="">E-Mail</label>
+                                        <input type="email" name="email" placeholder="e-Mail">
+                                    </div>
 
-                            </div>
-                            <label for="">Mesajınız</label>
-                            <textarea name="" id="" cols="90" rows="3" placeholder="Mesajınız"></textarea>
-                            <input type="submit">
+                                </div>
+                                <label for="">Konu</label>
+                                <select name="option" id="">
+                                    <option value="" disabled selected>Bilgi Almak İstenen Konular</option>
+                                    <option value="Kategori1">Kategori adı 1</option>
+                                    <option value="Kategori2">Kategori adı 2</option>
+                                    <option value="Kategori3">Kategori adı 3</option>
+                                </select>
+                                <label for="">Mesajınız</label>
+                                <textarea name="message" id="" cols="90" rows="3" placeholder="Mesajınız"></textarea>
+                                <input type="submit">
+                            </form>
                         </div>
                         <div class="contact-image animate-box" data-animate-effect="fadeInLeft">
                             <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h5>
