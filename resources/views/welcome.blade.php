@@ -354,7 +354,7 @@
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
                         <span class="heading-meta">Bize Destek Verenler</span>
-                        <h2 class="colorlib-heading animate-box">REFERANSLARIMIZ</h2>
+                        <h2 class="colorlib-heading animate-box">REFERANSLAR</h2>
                     </div>
                 </div>
             </div>
