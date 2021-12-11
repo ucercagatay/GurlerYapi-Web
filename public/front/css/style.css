@@ -289,8 +289,17 @@ figure figcaption {
     margin: 0;
     margin-bottom: 1vh;
 }
+#colorlib-aside .colorlib-footer small{
+font-size: 9px;
+}
 #colorlib-aside .colorlib-footer small div{
     font-size: 9px;
+}
+#colorlib-aside .colorlib-footer small div a{
+    color: rgba(255, 255, 255, 0.5);
+}
+#colorlib-aside .colorlib-footer small div a:hover{
+    color: #FFC300;
 }
 #colorlib-aside .colorlib-footer ul li {
     padding: 0;
@@ -561,7 +570,8 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
 .colorlib-work,
 .colorlib-about,
 .colorlib-services,
-.colorlib-contact {
+.colorlib-contact,
+.colorlib-references{
     padding-top: 4em;
     padding-bottom: 9em;
     clear: both;
@@ -1593,9 +1603,8 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
     flex-wrap: wrap;
 }
 .colorlib-references .references a{
-
-    margin: 1%;
-    width: calc(100% / 10);
+    margin: 15px;
+    width: 150px;
 }
 .colorlib-references .references a img{
     filter: grayscale(100%);
@@ -1608,13 +1617,108 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
     width: 100%;
     height: 700px;
 }
+.colorlib-forSale{
+    margin-top: 5vh;
+}
+.colorlib-forSale .forSale{
+    width: 100%;
+    background-color: white;
+}
+.colorlib-forSale .forSale .blog-entry{
+    display: flex;
+    width: calc(100% - 2.5em + 10px);
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 0 15px;
+    box-shadow: 0 0 20px 1px #00000024;
+    margin-bottom: 5vh;
+}
+.colorlib-forSale .forSale .blog-entry a{
+    margin-bottom: 0;
+    width: 40%;
+    margin-right: 15px;
+    overflow: hidden;
+}
+.colorlib-forSale .forSale .blog-entry a img{
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+.colorlib-forSale .forSale .blog-entry .desc{
+    padding: 15px 0;
+    width: 60%;
+}
+@media screen and (max-width: 600px) {
+    .colorlib-forSale .forSale .blog-entry .desc span{
+        font-size: 12px;
+        margin-bottom: 1vh;
+    }
+    .colorlib-forSale .forSale .blog-entry .desc h3{
+        font-size: 14px;
+        margin-bottom: 2vh;
+    }
+    .colorlib-forSale .forSale .blog-entry .desc p{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .colorlib-forSale .forSale .blog-entry{
+        display: block;
+    }
+    .colorlib-forSale .forSale .blog-entry a{
+        width: 100%;
+        margin-bottom: 2vh;
+    }
+    .colorlib-forSale .forSale .blog-entry .desc{
+        padding: 15px;
+        width: 100%;
+    }
+    .colorlib-forSale .forSale .blog-entry .desc span{
+        margin-top: 2vh;
+    }
+}
 
 @media screen and (max-width: 768px) {
+    .colorlib-references .references a{
+        margin: 11px;
+        width: 110px;
+    }
     #map {
         height: 200px;
     }
 }
-
+.header-search{
+    display: flex;
+    align-items: center;
+    margin-right: calc(2.5em + 10px);
+    justify-content: space-between;
+}
+.header-search .search input{
+    width: 220px;
+    height: 35px;
+    padding: 2px 10px;
+    border-radius: 50px;
+    background-color: #282826f7;
+    border-color: #FFC300;
+    color: white;
+}
+.header-search .search a{
+    color: white;
+    margin-left: -30px;
+}
+.header-search .search input:focus-visible {
+    outline: none;
+}
+@media only screen and (max-width: 768px) {
+    .header-search .search{
+        position: absolute;
+        top: 2vh;
+        right: 2.5em;
+        width: calc(100% - 130px);
+    }
+    .header-search .search input{
+        width: 100%;
+    }
+}
 .colorlib-bg-color {
     background: #fafafa;
     position: relative;

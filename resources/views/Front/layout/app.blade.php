@@ -10,7 +10,7 @@
     <meta name="author" content="" />
     <link rel="shortcut icon" href="{{asset("favicon.ico")}}">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <!-- Animate.css -->
     <link href="{{asset("front/css/animate.css")}}" rel="stylesheet">
     <!-- Icomoon Icon Fonts-->
@@ -77,7 +77,7 @@
             </ul>
             <small>&copy;
                 Copyright &copy;<script>document.write(new Date().getFullYear());</script>  AKSOYUCER Tüm Hakları Saklıdır
-                <div>Designed by <a href="">YUSUF ÇAĞLAR AKSOY</a> | Developed by <a href="">HAKTAN ÇAĞATAY ÜÇER</a></div>
+                <div>Designed by <a href="">YUSUF ÇAĞLAR AKSOY</a> <br> Developed by <a href="">HAKTAN ÇAĞATAY ÜÇER</a></div>
 
             </small></p>
         </div>
