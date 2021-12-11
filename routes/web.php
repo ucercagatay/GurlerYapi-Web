@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\CategoryModel;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 /*
@@ -25,10 +26,10 @@ Route::prefix('/admin')->name('admin.')->group(function () {
 //Front Routeları
 Route::prefix('/pages')->name('front.')->group(function () {
    //Categori sayfası
-    Route::get('/{language}/{url_slug}',[Controllers\PageController::class,'categoryPage'])->name('categoryPage');
+    Route::get('/{language}/{url_slug}/{id}',[Controllers\PageController::class,'categoryPage'])->name('categoryPage');
    //Categori sayfası bitiş
     //Sub category sayfaları
-    Route::get('/{language}/{url_slug}/{sub_category_url}',[Controllers\PageController::class,'contentPages'])->name('contentPage');
+    Route::get('/{language}/{url_slug}/{sub_category_url}/{id}',[Controllers\PageController::class,'contentPages'])->name('contentPage');
     //Sub category bitiş
 
 });

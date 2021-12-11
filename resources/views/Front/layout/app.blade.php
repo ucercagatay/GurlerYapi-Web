@@ -49,11 +49,11 @@
                     {{--                        <li><a href="">ssss</a></li>--}}
                     {{--                    </ul>--}}
                 </li>
-                @foreach($categories as $category)<li><a href="{{Route('front.categoryPage',['language'=>$category->language,'url_slug'=>$category->url_slug])}}">{{$category->category_name}}</a>
+                @foreach($categories as $category)<li><a href="{{Route('front.categoryPage',['language'=>$category->language,'url_slug'=>$category->url_slug,'id'=>$category->id])}}">{{$category->category_name}}</a>
                     @if(isset($category['subCategory']))
                         <ul>
                     @foreach($category['subCategory'] as $sub_category)
-                        <li><a href="{{Route('front.contentPage',['language'=>$category->language,'url_slug'=>$category->url_slug,'sub_category_url'=>$sub_category->sub_category_url])}}">{{$sub_category->name}}</a>
+                        <li><a href="{{Route('front.contentPage',['language'=>$category->language,'url_slug'=>$category->url_slug,'sub_category_url'=>$sub_category->sub_category_url,'id'=>$sub_category->id])}}">{{$sub_category->name}}</a>
                         </li>
                         @endforeach
                     </ul></li>

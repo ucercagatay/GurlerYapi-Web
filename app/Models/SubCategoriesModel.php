@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SubCategoriesModel extends Model
 {
     protected $table='sub_categories';
-
+    public $primaryKey='id';
     public function getCategory(){
         return $this->hasOne('App\Models\CategoryModel','category_id','id');
     }

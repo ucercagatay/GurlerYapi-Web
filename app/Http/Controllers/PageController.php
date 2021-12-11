@@ -24,15 +24,16 @@ public function mainPage(Request $request){
         $contents=ContentModel::where('category_id',$request->category_id)->get()->all();
         return view('welcome',compact('categories','contents'));
 }
-public function categoryPage(Request $request){
-        $categories=CategoryModel::where('id',$request->id)->get();
-        return view('front.pages.categoryPages',compact('categories'));
+public function categoryPage(Request $request,$id){
+    $categories_content=CategoryModel::where('id',$request->id)->first();
+    $categories=CategoryModel::where('language','türkçe')->with('subCategory')->get();
+        return view('front.pages.forSale',compact('categories','categories_content'));
 }
 
 public function contentPages($sub_category_url){
     $categories=CategoryModel::where('language','türkçe')->with('subCategory')->get();
-    $sub_categories=SubCategoriesModel::wheresubCategoryUrl($sub_category_url)->with('content')->get();
-
+    $sub_categories=SubCategoriesModel::where('sub_category_url',$sub_category_url)->with('content')->first();
+            dd($sub_categories);
      return view('front.pages.contentPages',compact('sub_categories','categories'));
 }
 }

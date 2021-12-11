@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class CategoryModel extends Model
 {
     protected $table='categories';
+    public $primaryKey='id';
     public function SubCategory(){
         return $this->hasMany('App\Models\SubCategoriesModel','category_id','id');
     }

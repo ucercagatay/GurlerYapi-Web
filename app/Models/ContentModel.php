@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ContentModel extends Model
 {
     protected $table='contents';
+    public $primaryKey='id';
     public function getCategory(){
         return $this->hasOne('App\Models\CategoryModel','id','category_id');
     }
