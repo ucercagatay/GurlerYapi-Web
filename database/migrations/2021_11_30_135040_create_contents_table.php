@@ -16,6 +16,7 @@ class CreateContentsTable extends Migration
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('sub_category_id');
             $table->string('title');
             $table->string('language')->withcomment('DilSeçimi');
             $table->string('content');
@@ -26,6 +27,7 @@ class CreateContentsTable extends Migration
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('sub_category_id')->references('id')->on('sub_categories');
         });
     }
 

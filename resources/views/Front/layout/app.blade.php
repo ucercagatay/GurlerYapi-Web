@@ -49,19 +49,15 @@
                     {{--                        <li><a href="">ssss</a></li>--}}
                     {{--                    </ul>--}}
                 </li>
-                @foreach($categories as $category)
-                    <li><a href="{{Route('front.categoryPage',['language'=>$category->language,'url_slug'=>$category->url_slug])}}">{{$category->category_name}}</a>
+                @foreach($categories as $category)<li><a href="{{Route('front.categoryPage',['language'=>$category->language,'url_slug'=>$category->url_slug])}}">{{$category->category_name}}</a>
+                    @if(isset($category['subCategory']))
                         <ul>
-                            @if($category->sub_category   !=NULL)
-                                <li><a href="{{Route('front.sub1_page',['language'=>$category->language,'url_slug'=>$category->url_slug,'sub_category'=>$category->sub_category])}}">{{$category->sub_category}}</a></li>
-                            @endif
-                            @if($category->sub_category_2   !=NULL)
-                                <li> <a href="{{Route('front.sub2_page',['language'=>$category->language,'url_slug'=>$category->url_slug,'sub_category_2'=>$category->sub_category_2])}}">{{$category->sub_category_2}}</a></li>
-                            @endif
-                            @if($category->sub_category_3   !=NULL)
-                                <li> <a href="{{Route('front.sub3_page',['language'=>$category->language,'url_slug'=>$category->url_slug,'sub_category_3'=>$category->sub_category_3])}}">{{$category->sub_category_3}}</a></li>
-                            @endif
-                        </ul></li>
+                    @foreach($category['subCategory'] as $sub_category)
+                        <li><a href="{{Route('front.contentPage',['language'=>$category->language,'url_slug'=>$category->url_slug,'sub_category_url'=>$sub_category->sub_category_url])}}">{{$sub_category->name}}</a>
+                        </li>
+                        @endforeach
+                    </ul></li>
+                @endif
                 @endforeach
 
             </ul>

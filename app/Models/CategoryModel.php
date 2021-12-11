@@ -8,5 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class CategoryModel extends Model
 {
     protected $table='categories';
+    public function SubCategory(){
+        return $this->hasMany('App\Models\SubCategoriesModel','category_id','id');
+    }
+    public function getContent(){
+        return $this->belongsTo('App\Models\ContentModel','category_id','id');
+    }
     use HasFactory;
 }

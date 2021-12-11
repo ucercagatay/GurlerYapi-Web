@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ContentModel extends Model
 {
     protected $table='contents';
-
+    public function getCategory(){
+        return $this->hasOne('App\Models\CategoryModel','id','category_id');
+    }
+    public function getSubCategory(){
+        return $this->hasOne('App\Models\SubCategoriesModel','id','subcategory_id');
+    }
     use HasFactory;
 }
