@@ -13,7 +13,7 @@ class SubCategoriesModel extends Model
         return $this->hasOne('App\Models\CategoryModel','category_id','id');
     }
     public function content(){
-        return $this->belongsTo('App\Models\ContentModel','sub_category_id','id');
+        return $this->hasMany('App\Models\ContentModel','sub_category_id','id');
     }
     use HasFactory;
 }

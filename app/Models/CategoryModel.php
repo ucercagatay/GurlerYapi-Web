@@ -13,7 +13,7 @@ class CategoryModel extends Model
         return $this->hasMany('App\Models\SubCategoriesModel','category_id','id');
     }
     public function getContent(){
-        return $this->belongsTo('App\Models\ContentModel','category_id','id');
+        return $this->hasMany('App\Models\ContentModel','category_id','id');
     }
     use HasFactory;
 }

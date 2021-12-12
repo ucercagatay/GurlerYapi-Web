@@ -25,15 +25,19 @@ public function mainPage(Request $request){
         return view('welcome',compact('categories','contents'));
 }
 public function categoryPage(Request $request,$id){
-    $categories_content=CategoryModel::where('id',$request->id)->first();
+    $categories_content=CategoryModel::where('id',$request->id)->with('getContent')->first();
     $categories=CategoryModel::where('language','türkçe')->with('subCategory')->get();
         return view('front.pages.forSale',compact('categories','categories_content'));
 }
 
-public function contentPages($sub_category_url){
+public function contentPages(Request $request,$id){
     $categories=CategoryModel::where('language','türkçe')->with('subCategory')->get();
-    $sub_categories=SubCategoriesModel::where('sub_category_url',$sub_category_url)->with('content')->first();
-            dd($sub_categories);
-     return view('front.pages.contentPages',compact('sub_categories','categories'));
+    $sub_categories=SubCategoriesModel::where('id',$request->id)->with('content')->first();
+     return view('front.pages.forSale2',compact('sub_categories','categories'));
+}
+public function ınnerPage(Request $request,$id){
+    $categories=CategoryModel::where('language','türkçe')->with('subCategory')->get();
+
+    return view('front.pages.forSaleInner',compact('sub_categories',));
 }
 }

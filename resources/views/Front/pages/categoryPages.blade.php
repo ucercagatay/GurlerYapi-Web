@@ -1,1 +1,0 @@
-{{$categories->sub_category}}
