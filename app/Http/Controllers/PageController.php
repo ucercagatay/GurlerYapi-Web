@@ -37,7 +37,7 @@ public function contentPages(Request $request,$id){
 }
 public function ınnerPage(Request $request,$id){
     $categories=CategoryModel::where('language','türkçe')->with('subCategory')->get();
-
-    return view('front.pages.forSaleInner',compact('sub_categories',));
+    $contents=ContentModel::where('id',$request->id)->get();
+    return view('front.pages.forSaleInner',compact('categories',));
 }
 }

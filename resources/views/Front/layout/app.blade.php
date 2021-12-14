@@ -39,10 +39,10 @@
 <div id="colorlib-page">
     <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
     <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-        <h1 id="colorlib-logo"><a href="index.html"><img src="{{asset("images/s2.png")}}" alt=""></a></h1>
+        <h1 id="colorlib-logo"><a href="{{Route('mainpage')}}"><img src="{{asset("images/s2.png")}}" alt=""></a></h1>
         <nav id="colorlib-main-menu" role="navigation">
             <ul>
-                <li class="colorlib-active"><a href="index.html">ANA SAYFA</a>
+                <li class="colorlib-active"><a href="{{Route('mainpage')}}">ANA SAYFA</a>
                     {{--                    <ul>--}}
                     {{--                        <li><a href="">ssss</a></li>--}}
                     {{--                        <li><a href="">ssss</a></li>--}}

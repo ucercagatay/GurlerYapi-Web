@@ -31,6 +31,8 @@ Route::prefix('/pages')->name('front.')->group(function () {
     //Sub category sayfaları
     Route::get('/{language}/{url_slug}/{sub_category_url}/{id}',[Controllers\PageController::class,'contentPages'])->name('contentPage');
     //Sub category bitiş
-
+//İnner Page Sayfası
+    Route::get('/{language}/{sub_category_url}/{content_url_slug}/{id}',[Controllers\PageController::class,'ınnerPage'])->name('ınnerPage');
+    //İnner Page bitiş
 });
 
