@@ -35,7 +35,7 @@ public function contentPages(Request $request,$id){
     $sub_categories=SubCategoriesModel::where('id',$request->id)->with('content')->first();
      return view('front.pages.forSale2',compact('sub_categories','categories'));
 }
-public function ınnerPage(Request $request,$id){
+public function detailPage(Request $request,$id){
     $categories=CategoryModel::where('language','türkçe')->with('subCategory')->get();
     $contents=ContentModel::where('id',$request->id)->get();
     return view('front.pages.forSaleInner',compact('categories',));
