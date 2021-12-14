@@ -31,9 +31,10 @@
                            <div class="search"><input type="search"> <a href=""><i class="fas fa-search"></i></a></div>
                        </div>
                    </div>
-                   @foreach($sub_categories['content'] as $content)
-                       @if($content->title!=NULL)
+
                    <div class="row">
+                       @foreach($sub_categories['content'] as $content)
+                           @if($content->title!=NULL)
                        <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
                            <div class="blog-entry">
                             <a class="blog-img"><img  src="{{asset("front/images/blog-1.jpg")}}" class="img-responsive" ></a>
@@ -45,7 +46,6 @@
                                </div>
                            </div>
                        </div>
-                   </div>
                    @elseif($content->title==NULL)
                        <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
                            <div class="blog-entry">
@@ -57,9 +57,12 @@
                                </div>
                            </div>
                        </div>
+                           @endif
+                       @endforeach
+                   </div>
+
                </div>
-                   @endif
-                   @endforeach
+
                </div>
            </div>
        </div>
