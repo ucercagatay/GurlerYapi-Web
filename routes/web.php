@@ -13,6 +13,7 @@ use App\Http\Controllers;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/test/{id}',[Controllers\AjaxController::class,'test'])->name('test');
 //Anasayfa ve Login Routeları
 Route::get('/',[Controllers\PageController::class,'mainPage'])->name('mainpage');
 Route::post('/formpost',[Controllers\BackController::class,'newMessage'])->name('formPost');
@@ -29,10 +30,10 @@ Route::prefix('/pages')->name('front.')->group(function () {
     Route::get('/{language}/{url_slug}/{id}',[Controllers\PageController::class,'categoryPage'])->name('categoryPage');
    //Categori sayfası bitiş
     //Sub category sayfaları
-    Route::get('/{language}/{url_slug}/{sub_category_url}/{id}',[Controllers\PageController::class,'contentPages'])->name('contentPage');
+    Route::get('/{language}/{category_id}/{sub_category_url}/{sub_category_id}',[Controllers\PageController::class,'contentPages'])->name('contentPage');
     //Sub category bitiş
 //İnner Page Sayfası
-    Route::get('/{language}/{sub_category_url}/{content_url_slug}/{id}',[Controllers\PageController::class,'detailPage'])->name('ınnerPage');
+        Route::get('/products/{id}/',[Controllers\PageController::class,'detailPage'])->name('saleDetail');
     //İnner Page bitiş
 });
 

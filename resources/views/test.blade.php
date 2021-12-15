@@ -160,7 +160,7 @@
                     </div>
                     <div class="animate-box" style="    padding: 15px;" data-animate-effect="fadeInRight">
                         <h2 >{{$content->title}}</h2>
-                        <p>{!! $content->content  !!}</p>
+                            <p>{!! $content->content  !!}</p>
                     </div>
                 </div>
             </div>

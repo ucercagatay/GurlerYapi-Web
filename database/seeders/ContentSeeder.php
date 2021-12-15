@@ -16,12 +16,12 @@ class ContentSeeder extends Seeder
     {
 
         DB::table('contents')->insert([
-            'category_id' => 2,
+            'category_id' => 3,
             'sub_category_id' => 1,
-            'title' =>'DENEMELER',
+            'title' =>'DAİRE',
             'language' =>'türkçe',
-            'content' =>'deneASOPFJASOPJFPOASJASFme',
-            'content_url_slug' =>'dASFKLŞNASKLNFLKAeneme',
+            'content' =>'<p>ASFASFASF</p><p>ASF<br>ASF<br>AS<br>FA<br>SF<br>AS<br>F<br>AS<br>FASLŞDMASLŞAS</p><p><br></p>',
+            'content_url_slug' =>'test',
             'created_at' =>now(),
         ]);
     }

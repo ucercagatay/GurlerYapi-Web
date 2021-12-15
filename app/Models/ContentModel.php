@@ -12,8 +12,8 @@ class ContentModel extends Model
     public function getCategory(){
         return $this->hasOne('App\Models\CategoryModel','id','category_id');
     }
-    public function getSubCategory(){
-        return $this->hasOne('App\Models\SubCategoriesModel','id','subcategory_id');
+    public function subCat(){
+        return $this->hasOne('App\Models\SubCategoriesModel','id','sub_category_id');
     }
     use HasFactory;
 }
