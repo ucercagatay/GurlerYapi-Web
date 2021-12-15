@@ -53,6 +53,7 @@
                     @if(isset($category['subCategory']))
                         <ul>
                     @foreach($category['subCategory'] as $sub_category)
+
                         <li><a href="{{Route('front.contentPage',['language'=>$category->language,'category_id'=>$category->id,'sub_category_url'=>$sub_category->sub_category_url,'sub_category_id'=>$sub_category->id])}}">{{$sub_category->name}}</a>
                         </li>
                         @endforeach

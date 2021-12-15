@@ -36,5 +36,6 @@ class SubCategoriesSeeder extends Seeder
             'updated_at'=>now(),
         ]);
 
+
     }
 }

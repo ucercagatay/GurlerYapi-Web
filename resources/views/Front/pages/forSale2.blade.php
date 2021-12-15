@@ -38,7 +38,7 @@
                                 <div class="desc">
                                     <span><small>{{$content->created_at}}</small> | <small> {{$content->title}} </small></span>
                                     <h3><a>{{$content->title}}</a></h3>
-                                    <p>{{$content->content}} </p>
+                                    <p>{{strip_tags($content->content)}} </p>
                                     <a href="{{route('front.saleDetail',$content->id)}}">Detayları görüntüle</a>
                                 </div>
                             </div>

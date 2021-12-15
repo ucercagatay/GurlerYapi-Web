@@ -34,8 +34,7 @@ public function categoryPage(Request $request,$id){
 public function contentPages(Request $request,$sub_category_id,$category_id,$sub_category_url){
         $categories=CategoryModel::where('language','türkçe')->with('subCategory')->get();
         $sub_category=SubCategoriesModel::where('sub_category_url',$request->sub_category_url)->first();
-        $contents=ContentModel::where('sub_category_id',$request->sub_category_id)->with('subCat')->where('category_id',$request->category_id)->get()->all();
-        dd($contents);
+        $contents=ContentModel::where('sub_category_id',$request->sub_category_id)->with('subCat')->where('category_id',$request->category_id)->get();
         return view('front.pages.forSale2',compact('contents','categories','sub_category'));
 }
 public function detailPage(Request $request){
