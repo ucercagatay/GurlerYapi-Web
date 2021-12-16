@@ -16,7 +16,7 @@ class PageController extends Controller
     }
     //dashboard
     public function dashboard(){
-        return view('back.dashboardpages.dashboard');
+        return view('back.panel');
     }
 //Front Pages
 //MainPage
