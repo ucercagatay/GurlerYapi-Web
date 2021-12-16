@@ -3,58 +3,30 @@
     <div id="colorlib-main">
         <aside id="colorlib-hero" class="js-fullheight">
             <div class="flexslider js-fullheight">
+
                 <ul class="slides">
-                    <li style="background-image: url({{asset("front/images/img_bg_1.jpg")}})">
+                    @foreach($contents as $content)
+                    <li style="background-image: {{$content->photo_1}}" alt="fotogelicek">
                         <div class="overlay"></div>
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
                                     <div class="slider-text-inner">
                                         <div class="desc">
-                                            <h1>Slide1</h1>
-                                            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis corporis</h2>
-                                            <p><a class="btn btn-primary btn-learn">Daha Fazlasını Gör <i class="icon-arrow-right3"></i></a></p>
+                                            <h1>{{$content->title}}</h1>
+                                            <h2>{{strip_tags($content->content)}}</h2>
+                                            <p><a href="{{route('front.saleDetail',$content->id)}}" class="btn btn-primary btn-learn">Daha Fazlasını Gör <i class="icon-arrow-right3"></i></a></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li style="background-image: url({{asset("front/images/img_bg_2.jpg")}})">
-                        <div class="overlay"></div>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-                                    <div class="slider-text-inner">
-                                        <div class="desc">
-                                            <h1>Slide2</h1>
-                                            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis corporis</h2>
-                                            <p><a class="btn btn-primary btn-learn">Daha Fazlasını Gör <i class="icon-arrow-right3"></i></a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="background-image: url({{asset("front/images/img_bg_3.jpg")}})">
-                        <div class="overlay"></div>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-                                    <div class="slider-text-inner">
-                                        <div class="desc">
-                                            <h1>Slide3</h1>
-                                            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis corporis</h2>
-                                            <p><a class="btn btn-primary btn-learn">Daha Fazlasını Gör <i class="icon-arrow-right3"></i></a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                    @endforeach
                 </ul>
             </div>
         </aside>
+
         <div class="colorlib-about">
             <div class="colorlib-narrow-content">
                 <div class="row">

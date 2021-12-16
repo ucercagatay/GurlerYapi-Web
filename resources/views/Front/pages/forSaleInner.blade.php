@@ -126,34 +126,13 @@
                         <div thumbsSlider="" class="swiper mySwiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-1.jpg")}}" alt="">
+                                    <img src={{$content->photo_1}} alt="">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-2.jpg")}}" alt="">
+                                    <img src={{$content->photo_2}} alt="">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-3.jpg")}}" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-1.jpg")}}" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-2.jpg")}}" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-3.jpg")}}" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-1.jpg")}}" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-2.jpg")}}" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-3.jpg")}}" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-1.jpg")}}" alt="">
+                                    <img src={{$content->photo_3}}alt="">
                                 </div>
                             </div>
                         </div>
@@ -169,15 +148,15 @@
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script>
             var swiper = new Swiper(".mySwiper", {
-                loop: true,
-                spaceBetween: 10,
-                slidesPerView: 4,
+                loop: false,
+                spaceBetween: 3,
+                slidesPerView: 3,
                 freeMode: true,
                 watchSlidesProgress: true,
             });
             var swiper2 = new Swiper(".mySwiper2", {
                 loop: true,
-                spaceBetween: 10,
+                spaceBetween: 3,
                 navigation: {
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
