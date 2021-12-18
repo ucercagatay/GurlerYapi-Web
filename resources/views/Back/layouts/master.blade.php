@@ -110,7 +110,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Site Kontrolü:</h6>
                     <a class="collapse-item" href="">Referansları Düzenle</a>
-                    <a class="collapse-item" href="">Config Düzenle</a>
+                    <a class="collapse-item" href="{{route('admin.siteConfigshow')}}">Config Düzenle</a>
                 </div>
             </div>
         </li>

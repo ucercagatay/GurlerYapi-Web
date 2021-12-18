@@ -23,13 +23,14 @@ Route::post('/userpost',[Controllers\BackController::class,'loginControl'])->nam
 //Panel Routeları
 Route::prefix('/admin')->name('admin.')->group(function () {
     Route::get('/dashboard',[Controllers\PageController::class,'dashboard'])->name('dashboard');
+    Route::get('/showSiteConfigs',[Controllers\SiteConfigController::class,'showConfigs'])->name('siteConfigshow');
     Route::get('/showCategories',[Controllers\BackController::class,'showCategories'])->name('showCategories');
-    Route::get('/newCategory',[Controllers\BackController::class,'catForm'])->name('catForm');
-    Route::get('/newProduct',[Controllers\BackController::class,'contentForm'])->name('product');
-    Route::get('/showProducts',[Controllers\BackController::class,'getContents'])->name('getContents');
-    Route::post('/products',[Controllers\BackController::class,'addContent'])->name('productPost');
-    Route::post('/addCategories',[Controllers\BackController::class,'addCategories'])->name('addCategories');
     Route::get('/showSubCategories',[Controllers\BackController::class,'showSubCategories'])->name('showSubCats');
+    Route::get('/showProducts',[Controllers\BackController::class,'getContents'])->name('getContents');
+    Route::get('/newCategory',[Controllers\BackController::class,'catForm'])->name('catForm');
+    Route::post('/addCategories',[Controllers\BackController::class,'addCategories'])->name('addCategories');
+    Route::get('/newProduct',[Controllers\BackController::class,'contentForm'])->name('product');
+    Route::post('/products',[Controllers\BackController::class,'addContent'])->name('productPost');
 });
 //Front Routeları
 Route::prefix('/pages')->name('front.')->group(function () {

@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class SiteConfigModel extends Model
 {
     use HasFactory;
+    protected $table='site_config';
+    protected $guarded ='id';
 }
