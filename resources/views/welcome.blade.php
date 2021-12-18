@@ -26,7 +26,6 @@
                 </ul>
             </div>
         </aside>
-
         <div class="colorlib-about">
             <div class="colorlib-narrow-content">
                 <div class="row">

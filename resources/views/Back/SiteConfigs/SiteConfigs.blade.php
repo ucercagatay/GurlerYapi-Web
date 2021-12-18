@@ -21,7 +21,7 @@
                     <td>{{$config->adress}}</td>
                     <td>{{$config->maps_link}}</td>
                     <td>{{$config->updated_at}}</td>
-                    <td><button>Güncelle</button></td>
+                    <td><button class="btn btn-warning">Güncelle</button></td>
             </tr>
            @endforeach
             </tbody>

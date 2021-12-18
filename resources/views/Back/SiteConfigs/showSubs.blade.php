@@ -14,7 +14,7 @@
                 <tr>
                     <td>{{$sub->email}}</td>
                     <td>{{$sub->created_at}}</td>
-                    <td><button>Sil</button></td>
+                    <td><button class="btn btn-danger">Sil</button></td>
                 </tr>
             @endforeach
             </tbody>

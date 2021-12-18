@@ -18,11 +18,11 @@
                     <td>{{$reference->photo}}</td>
                     <td>{{$reference->reference_link}}</td>
                     <td>{{$reference->updated_at}}</td>
-                    <td><form method="post" action="{{route('admin.deleteReference')}}">
+                    <td style="display: flex"><form method="post" action="{{route('admin.deleteReference')}}">
                             @csrf
                             <input type="hidden" name="delete" value="{{$reference->id}}">
-                            <button type="submit">SİL</button>
-                        </form><a href="{{route('admin.updatePate',$reference->id)}}">Güncelle</a></td>
+                            <button class="btn btn-danger" type="submit">SİL</button>
+                        </form><a class="btn btn-warning" style="margin-left: 2%" href="{{route('admin.updatePate',$reference->id)}}">Güncelle</a></td>
             </tr>
                 @endforeach
             </tbody>

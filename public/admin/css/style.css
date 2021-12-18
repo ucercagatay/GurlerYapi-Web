@@ -45,3 +45,27 @@
     display: flex;
     justify-content: center;
 }
+.table-bordered td p, .table-bordered th p{
+    height: 185px;
+    overflow: scroll;
+}
+.card.shadow.mb-4 div{
+    display: flex;
+    margin-bottom: 2vh;
+}
+.card.shadow.mb-4 h3{
+    margin-bottom: 2vh;
+    font-weight: bolder;
+    color: black;
+    border-bottom: 1px solid black;
+    width:300px
+}
+.card.shadow.mb-4 form{
+    margin-left: 4vh;
+}
+.card.shadow.mb-4 div label{
+    margin-right: 2vh;
+}
+.card.shadow.mb-4 input, .card.shadow.mb-4 select, .card.shadow.mb-4 textarea{
+    outline: none;
+}

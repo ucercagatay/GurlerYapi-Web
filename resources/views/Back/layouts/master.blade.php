@@ -435,7 +435,7 @@
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                 <form method="post" action="">
                     @csrf
-                    <button type="submit">LogOut</button>
+                    <button class="btn btn-danger" type="submit">LogOut</button>
                 </form>
             </div>
         </div>
