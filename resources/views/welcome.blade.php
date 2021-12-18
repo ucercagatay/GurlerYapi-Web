@@ -6,7 +6,7 @@
 
                 <ul class="slides">
                     @foreach($contents as $content)
-                    <li style="background-image: {{$content->photo_1}}" alt="fotogelicek">
+                    <li style="background-image:url({{asset($content->photo_1)}})" alt="fotogelicek">
                         <div class="overlay"></div>
                         <div class="container-fluid">
                             <div class="row">
@@ -14,7 +14,7 @@
                                     <div class="slider-text-inner">
                                         <div class="desc">
                                             <h1>{{$content->title}}</h1>
-                                            <h2>{{strip_tags($content->content)}}</h2>
+                                            <h2>{{strip_tags($content->content_text)}}</h2>
                                             <p><a href="{{route('front.saleDetail',$content->id)}}" class="btn btn-primary btn-learn">Daha Fazlasını Gör <i class="icon-arrow-right3"></i></a></p>
                                         </div>
                                     </div>
@@ -31,16 +31,19 @@
             <div class="colorlib-narrow-content">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="about-img animate-box" data-animate-effect="fadeInLeft" style="    box-shadow: 0 0 20px 1px #0000006b; background-image: url({{asset("front/images/img_bg_2.jpg")}})">
+                        @foreach($about as $aboutus)
+                        <div class="about-img animate-box" data-animate-effect="fadeInLeft" style="    box-shadow: 0 0 20px 1px #0000006b; background-image: url({{asset($aboutus->photo_1)}})">
                         </div>
                     </div>
                     <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                         <div class="about-desc">
                             <span class="heading-meta">HOŞGELDİNİZ</span>
-                            <h2 class="colorlib-heading">BİZ KİMİZ</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequatur dolore doloremque, eius eum fuga id modi pariatur quasi tenetur. Culpa, dolore eaque error excepturi magni molestias possimus repudiandae voluptatibus eius eum fuga id modi pariatur!</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequatur dolore doloremque, eius eum fuga id modi pariatur quasi tenetur. Culpa, dolore eaque error excepturi magni</p>
+
+                            <h2 class="colorlib-heading">{{$aboutus->title}}</h2>
+                            {!! $aboutus->content_text !!}
+                         @endforeach
                         </div>
+
                         <div class="row padding">
                             <div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
                                 <a href="#" class="steps active">

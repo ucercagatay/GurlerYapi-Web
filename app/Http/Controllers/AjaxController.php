@@ -15,9 +15,7 @@ class AjaxController extends Controller
         $contents=ContentModel::where('sub_category_id',$request->sub_category_id)->with('subCat')->where('category_id',$request->category_id)->get()->all();
         return view('test',compact('contents','categories','sub_category'));
     }*/
-    public function test(Request $request,$id){
-        $categories=CategoryModel::where('language','türkçe')->with('subCategory')->get();
-        $content=ContentModel::where('id',$request->id)->first();
-        return view('test',compact('categories','content'));
+    public function test(){
+        return view('back.layouts.table');
     }
 }

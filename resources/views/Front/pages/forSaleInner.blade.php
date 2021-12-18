@@ -90,34 +90,13 @@
                         >
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-1.jpg")}}" alt="">
+                                    <img src="{{asset($content->photo_1)}}" alt="">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-2.jpg")}}" alt="">
+                                    <img src="{{asset($content->photo_2)}}" alt="">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-3.jpg")}}" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-1.jpg")}}" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-2.jpg")}}" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-3.jpg")}}" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-1.jpg")}}" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-2.jpg")}}" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-3.jpg")}}" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset("front/images/blog-1.jpg")}}" alt="">
+                                    <img src="{{asset($content->photo_3)}}" alt="">
                                 </div>
                             </div>
                             <div class="swiper-button-next"></div>
@@ -126,20 +105,20 @@
                         <div thumbsSlider="" class="swiper mySwiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src={{$content->photo_1}} alt="">
+                                    <img src={{asset($content->photo_1)}} alt="">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src={{$content->photo_2}} alt="">
+                                    <img src={{asset($content->photo_2)}} alt="">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src={{$content->photo_3}}alt="">
+                                    <img src={{asset($content->photo_3)}} alt="">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="animate-box" style="    padding: 15px;" data-animate-effect="fadeInRight">
                         <h2 >{{$content->title}}</h2>
-                        <p>{!! $content->content  !!}</p>
+                        <p>{!! $content->content_text  !!}</p>
                     </div>
                 </div>
             </div>

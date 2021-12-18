@@ -19,11 +19,11 @@ class CreateContentsTable extends Migration
             $table->unsignedBigInteger('sub_category_id');
             $table->string('title');
             $table->string('language')->withcomment('DilSeçimi');
-            $table->string('content');
+            $table->longText('content_text');
             $table->string('content_url_slug')->comment('url için girilicek');
-            $table->text('photo_1')->nullable();
-            $table->text('photo_2')->nullable();
-            $table->text('photo_3')->nullable();
+            $table->string('photo_1');
+            $table->string('photo_2');
+            $table->string('photo_3');
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories');

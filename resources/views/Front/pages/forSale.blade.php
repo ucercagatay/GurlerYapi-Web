@@ -66,20 +66,23 @@
                       </div>
                   </div>
                   <div class="row">
+
                     @if(isset($categories_content['getContent']))
                         @foreach($categories_content['getContent'] as $content)
                               <div class="forSale animate-box" data-animate-effect="fadeInLeft">
                                   <div class="blog-entry">
-                                      <a href="" class="blog-img"><img  src="{{asset("front/images/blog-1.jpg")}}" class="img-responsive" ></a>
+                                      <a href="" class="blog-img"><img  src="{{asset($content->photo_1)}}" class="img-responsive" ></a>
                                       <div class="desc">
                                           <span><small>{{$content->created_at}} </small> | <small>{{$content->title}}</small></span>
                                           <h3><a href="">{{$content->title}}</a></h3>
-                                          <p>{!! \Illuminate\Support\Str::limit(strip_tags($content->content),70) !!} </p>
+                                          <p>{!! \Illuminate\Support\Str::limit(strip_tags($content->content_text),70) !!} </p>
                                           <a href="{{route('front.saleDetail',$content->id)}}">Detayları görüntüle</a>
                                       </div>
                                   </div>
                               </div>
                         @endforeach
+                      @else
+                          <h1>BU ALANDA İÇERİK YOK</h1>
                  @endif
                   </div>
               </div>

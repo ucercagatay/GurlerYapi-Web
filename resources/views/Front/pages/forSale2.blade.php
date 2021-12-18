@@ -45,7 +45,7 @@
                     @foreach($contents as $content)
                         <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
                             <div class="blog-entry">
-                                <a class="blog-img"><img  src="{{asset("front/images/blog-1.jpg")}}" class="img-responsive" ></a>
+                                <a class="blog-img"><img  src="{{asset($content->photo_2)}}" class="img-responsive" ></a>
                                 <div class="desc">
                                     <span><small>{{$content->created_at}}</small> | <small> {{$content->title}} </small></span>
                                     <h3><a>{{$content->title}}</a></h3>

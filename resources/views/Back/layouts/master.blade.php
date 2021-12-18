@@ -64,8 +64,21 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Kategori Çeşitleri:</h6>
-                    <a class="collapse-item" href="">Kategoriler</a>
-                    <a class="collapse-item" href="">Alt Kategoriler</a>
+                    <a class="collapse-item" href="{{route('admin.catForm')}}">Kategori Ekle</a>
+                    <a class="collapse-item" href="{{route('admin.showCategories')}}">Kateogirleri Görüntüle</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSubC"
+               aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Alt Kategoriler</span>
+            </a>
+            <div id="collapseSubC" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href=""> Alt Kategori Ekle</a>
+                    <a class="collapse-item" href="{{route('admin.showSubCats')}}">Alt Kategorileri Görüntüle</a>
                 </div>
             </div>
         </li>
@@ -81,7 +94,8 @@
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">İçerik Kontrolü:</h6>
-                    <a class="collapse-item" href="">İçerikleri Düzenle</a>
+                    <a class="collapse-item" href="{{route('admin.getContents')}}">İçerikleri Düzenle</a>
+                    <a class="collapse-item" href="{{route('admin.product')}}">İçerikleri Ekle</a>
                 </div>
             </div>
         </li>

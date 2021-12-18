@@ -22,8 +22,9 @@ class PageController extends Controller
 //MainPage
 public function mainPage(Request $request){
         $categories=CategoryModel::where('language','türkçe')->with('subCategory')->get();
+        $about=ContentModel::where('title','Hakkımızda')->get();
         $contents=ContentModel::where('category_id',2)->get()->all();
-        return view('welcome',compact('categories','contents'));
+        return view('welcome',compact('categories','contents','about'));
 }
 public function categoryPage(Request $request,$id){
     $categories_content=CategoryModel::where('id',$request->id)->with('getContent')->first();

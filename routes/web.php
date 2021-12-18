@@ -13,7 +13,7 @@ use App\Http\Controllers;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/test/{id}',[Controllers\AjaxController::class,'test'])->name('test');
+Route::get('/test',[Controllers\AjaxController::class,'test'])->name('test');
 //Anasayfa ve Login Routeları
 Route::get('/',[Controllers\PageController::class,'mainPage'])->name('mainpage');
 Route::post('/formpost',[Controllers\BackController::class,'newMessage'])->name('formPost');
@@ -23,6 +23,13 @@ Route::post('/userpost',[Controllers\BackController::class,'loginControl'])->nam
 //Panel Routeları
 Route::prefix('/admin')->name('admin.')->group(function () {
     Route::get('/dashboard',[Controllers\PageController::class,'dashboard'])->name('dashboard');
+    Route::get('/showCategories',[Controllers\BackController::class,'showCategories'])->name('showCategories');
+    Route::get('/newCategory',[Controllers\BackController::class,'catForm'])->name('catForm');
+    Route::get('/newProduct',[Controllers\BackController::class,'contentForm'])->name('product');
+    Route::get('/showProducts',[Controllers\BackController::class,'getContents'])->name('getContents');
+    Route::post('/products',[Controllers\BackController::class,'addContent'])->name('productPost');
+    Route::post('/addCategories',[Controllers\BackController::class,'addCategories'])->name('addCategories');
+    Route::get('/showSubCategories',[Controllers\BackController::class,'showSubCategories'])->name('showSubCats');
 });
 //Front Routeları
 Route::prefix('/pages')->name('front.')->group(function () {
