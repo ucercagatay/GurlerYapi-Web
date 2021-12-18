@@ -30,6 +30,8 @@ Route::prefix('/admin')->name('admin.')->group(function () {
     Route::get('/showReferences',[Controllers\SiteConfigController::class,'showReferences'])->name('showReferences');
     Route::get('/showProducts',[Controllers\BackController::class,'getContents'])->name('getContents');
     Route::get('/showMessages',[Controllers\SiteConfigController::class,'showMessages'])->name('showMessages');
+    Route::get('/addReference',[Controllers\SiteConfigController::class,'addRef'])->name('addReferences');
+    Route::post('/postReferences',[Controllers\SiteConfig::class,'postRef'])->name('postReferences');
     Route::get('/newCategory',[Controllers\BackController::class,'catForm'])->name('catForm');
     Route::post('/addCategories',[Controllers\BackController::class,'addCategories'])->name('addCategories');
     Route::get('/newProduct',[Controllers\BackController::class,'contentForm'])->name('product');

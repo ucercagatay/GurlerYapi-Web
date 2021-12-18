@@ -109,6 +109,7 @@
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Site Kontrolü:</h6>
+                    <a class="collapse-item" href="{{route('admin.addReferences')}}">Referans Ekle</a>
                     <a class="collapse-item" href="{{route('admin.showReferences')}}">Referansları Düzenle</a>
                     <a class="collapse-item" href="{{route('admin.siteConfigshow')}}">Config Düzenle</a>
                 </div>
