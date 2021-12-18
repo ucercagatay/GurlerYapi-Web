@@ -35,11 +35,11 @@
         <label>Url Değeri</label> <br>
         <input type="text" name="content_url_slug" value="{{$content->content_url_slug}}"> <br>
         <label>Fotoğraf 1</label><br>
-        <input type="file" name="photo_1"><img src="{{$content->photo_1}}" style="width:200px; height: 175px;"> <br>
+        <input type="file" name="photo_1"><img src="{{asset($content->photo_1)}}" style="width:200px; height: 175px;"> <br>
         <label>Fotoğraf 2</label><br>
-        <input type="file" name="photo_2"> <br><img src="{{$content->photo_2}}" style="width:200px; height: 175px;">
+        <input type="file" name="photo_2"> <br><img src="{{asset($content->photo_2)}}" style="width:200px; height: 175px;">
         <label>Fotoğraf 3</label><br>
-        <input type="file" name="photo_3"> <br><img src="{{$content->photo_3}}" style="width:200px; height: 175px;">
+        <input type="file" name="photo_3"> <br><img src="{{asset($content->photo_3)}}" style="width:200px; height: 175px;">
         <button type="submit">Güncelle</button>
     </form>
 
