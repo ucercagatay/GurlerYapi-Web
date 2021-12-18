@@ -8,9 +8,12 @@ use App\Models\FormModel;
 use App\Models\RoleModel;
 use App\Models\SubCategoriesModel;
 use App\Models\UserModel;
+use Dotenv\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 
 class BackController extends Controller
 {
@@ -35,6 +38,17 @@ else {
         return view('logScreen')->withSuccess(1);
     }
     public function newMessage(Request $request){
+        $validator=\Illuminate\Support\Facades\Validator::make($request->all(),[
+            'name' =>'required|min:3|max:30',
+            'surname'=>'required|min:3|max:24',
+            'email'=>'required|email',
+            'phoneNumber'=>'required',
+            'option'=>'required',
+            'message'=>'min:3|max:240',
+        ]);
+            if($validator->fails()){
+                return Redirect::to(URL::previous().'#contact')->withErrors($validator,'message');
+            }
         DB::table('forms')->insert([
             'name'=>$request->input('name'),
             'surname'=>$request->input('surname'),

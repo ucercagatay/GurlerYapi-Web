@@ -361,7 +361,7 @@
                     </div>
 
                     <div class="whiteArea">
-                        <div class=" contact-form animate-box" data-animate-effect="fadeInLeft">
+                        <div class=" contact-form animate-box" id="contact" data-animate-effect="fadeInLeft">
                             <form method="post" action="{{route('formPost')}}">
                                 @csrf
                                 <div>
