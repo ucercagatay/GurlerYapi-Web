@@ -20,6 +20,7 @@ Route::post('/formpost',[Controllers\BackController::class,'newMessage'])->name(
 //Login
 Route::get('/login',[Controllers\PageController::class,'loginScreen'])->name('logScreen');
 Route::post('/userpost',[Controllers\BackController::class,'loginControl'])->name('logpost');
+Route::post('/logOut',[Controllers\BackController::class,'logOut'])->name('logOut');
 //Panel Routeları
 Route::prefix('/admin')->name('admin.')->group(function () {
     Route::get('/dashboard',[Controllers\PageController::class,'dashboard'])->name('dashboard');

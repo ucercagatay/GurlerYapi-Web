@@ -374,7 +374,7 @@
 {{--                                Activity Log--}}
 {{--                            </a>--}}
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <a class="dropdown-item" href="{{route('logOut')}}" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Çıkış yap
                             </a>
@@ -433,7 +433,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <form method="post" action="">
+                <form method="post" action="{{route('logOut')}}">
                     @csrf
                     <button class="btn btn-danger" type="submit">LogOut</button>
                 </form>

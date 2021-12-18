@@ -25,10 +25,14 @@ class BackController extends Controller
                }
             }
 else {
-    return back();
+    return back()->withSuccess(2);
 }
 //Form İşlemleri
 //Anasayfa Form Gönderim İşlemi
+    }
+    public function logOut() {
+        Auth::logout();
+        return view('logScreen')->withSuccess(1);
     }
     public function newMessage(Request $request){
         DB::table('forms')->insert([

@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class isOut
 {
@@ -15,7 +16,10 @@ class isOut
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
-    {
+    {  if(Auth::check()){
+        return redirect()->route('admin.dashboard')->withErrors('Önce çıkış yapmalısınız');
+
+    }
         return $next($request);
     }
 }
