@@ -11,6 +11,17 @@
         }
         .desc{
             padding: 0 16px;
+            padding-bottom: 4px;
+        }
+        .desc>a:last-child{
+            background-color: rgba(40, 40, 38, 0.6);
+            color: white;
+            padding: 4px 16px;
+            float: right;
+            margin-right: -16px;
+        }
+        .desc>a:last-child:hover{
+            background-color: #282826;
         }
         @media screen and (max-width: 768px) {
             .colorlib-forSale{

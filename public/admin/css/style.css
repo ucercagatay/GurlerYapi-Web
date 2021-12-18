@@ -1,0 +1,47 @@
+.sidebar-brand img{
+    width: 45px;
+}
+.bg-gradient-primary{
+    background-color: #282826;
+    background-image: none;
+}
+.navbar-expand{
+    background-color: #FFC300 !important;
+
+}
+.datas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.card-body .dataCard{
+    background-color: #282826;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(84% / 4);
+    margin: 2%;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.card-body .dataCard i{
+    font-size: 50px;
+    padding:2vh 4vh 0 4vh;
+}
+.card-body .dataCard h2{
+     font-weight: 800;
+     font-size: 40px;
+    padding:0 4vh;
+
+}
+.card-body .dataCard h5{
+    width: 100%;
+    margin: 0;
+    padding:1vh 4vh;
+    background-color: #FFC300;
+    display: flex;
+    justify-content: center;
+}
