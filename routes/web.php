@@ -36,6 +36,9 @@ Route::prefix('/admin')->name('admin.')->group(function () {
     Route::post('/addCategories',[Controllers\BackController::class,'addCategories'])->name('addCategories');
     Route::get('/newProduct',[Controllers\BackController::class,'contentForm'])->name('product');
     Route::post('/products',[Controllers\BackController::class,'addContent'])->name('productPost');
+    Route::get('/updateCategory/{id}',[Controllers\UpdateController::class,'updateCategory'])->name('updateCategory');
+    Route::post('/postCategory/{id}',[Controllers\UpdateController::class,'updatePostCategory'])->name('catPostUpdate');
+    Route::post('/deleteCategory',[Controllers\DeleteController::class,'deleteCategory'])->name('deleteCategory');
 });
 //Front Routeları
 Route::prefix('/pages')->name('front.')->group(function () {

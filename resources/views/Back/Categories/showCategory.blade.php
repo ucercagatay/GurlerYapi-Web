@@ -22,7 +22,11 @@
             @else
             <td>Henüz güncellenmedi</td>
             @endif
-            <td><button>Sil</button><button>Güncelle</button></td>
+            <td><form method="post" action="{{route('admin.deleteCategory')}}">
+                    @csrf
+                    <input type="hidden" name="delete" value="{{$category->id}}">
+                    <button type="submit">Sil</button>
+                </form><a href="{{route('admin.updateCategory',$category->id)}}">Güncelle</a></td>
             </tbody>
 
           @endforeach
