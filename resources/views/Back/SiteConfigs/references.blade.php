@@ -18,7 +18,11 @@
                     <td>{{$reference->photo}}</td>
                     <td>{{$reference->reference_link}}</td>
                     <td>{{$reference->updated_at}}</td>
-                    <td><button>Güncelle</button></td>
+                    <td><form method="post" action="{{route('admin.deleteReference')}}">
+                            @csrf
+                            <input type="hidden" name="delete" value="{{$reference->id}}">
+                            <button type="submit">SİL</button>
+                        </form><a href="{{route('admin.updatePate',$reference->id)}}">Güncelle</a></td>
             </tr>
                 @endforeach
             </tbody>

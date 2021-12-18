@@ -42,6 +42,7 @@
                     </div>
                 </div>
                 <div class="row">
+
                     @foreach($contents as $content)
                         <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
                             <div class="blog-entry">
@@ -54,22 +55,12 @@
                                 </div>
                             </div>
                         </div>
-                        @if($content->title==NULL)
-                            <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-                                <div class="blog-entry">
-                                    <a href="" class="blog-img"><img  src="{{asset("front/images/blog-1.jpg")}}" class="img-responsive" ></a>
-                                    <div class="desc">
-                                        <span><small>DENEME</small> | <small> DENEME </small></span>
-                                        <h3><a href="">DENEME</a></h3>
-                                        <p>DENEME </p>
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
                     @endforeach
+
                 </div>
 
             </div>
+
 
         </div>
     </div>

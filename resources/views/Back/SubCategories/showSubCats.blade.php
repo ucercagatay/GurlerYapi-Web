@@ -30,7 +30,11 @@
                 @else
                     <td>Henüz güncellenmedi</td>
                 @endif
-                <td><button>Sil</button><button>Güncelle</button></td>
+                <td><form method="post" action="{{route('admin.deleteSub')}}">
+                        @csrf
+                        <input type="hidden" name="delete" value="{{route('admin.deleteSub')}}">
+                        <button type="submit">SİL(!DİKKAT!)</button>
+                    </form><a href="{{route('admin.updatepage',$subCat->id)}}">Güncelle</a></td>
                 </tbody>
 
             @endforeach

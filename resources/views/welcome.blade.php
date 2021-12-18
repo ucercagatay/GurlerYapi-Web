@@ -14,7 +14,7 @@
                                     <div class="slider-text-inner">
                                         <div class="desc">
                                             <h1>{{$content->title}}</h1>
-                                            <h2>{{strip_tags($content->content_text)}}</h2>
+                                            <h2>{!! \Illuminate\Support\Str::limit($content->content_text,80) !!}</h2>
                                             <p><a href="{{route('front.saleDetail',$content->id)}}" class="btn btn-primary btn-learn">Daha Fazlasını Gör <i class="icon-arrow-right3"></i></a></p>
                                         </div>
                                     </div>
@@ -290,15 +290,15 @@
                         <h2 class="colorlib-heading">SATIŞTA OLAN PROJELER</h2>
                     </div>
                 </div>
+                @foreach($contents as $content)
                 <div class="row">
-                    @foreach($contents as $content)
                     <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
                         <div class="blog-entry">
                             <a href="blog.html" class="blog-img"><img  src="{{asset($content->photo_1)}}" class="img-responsive" ></a>
                             <div class="desc">
-                                <span><small>Nisan 14, 2018 </small> | <small> {{$content->title}} </small></span>
-                                <h3><a href="">Proje 1</a></h3>
-                                    <p>{!! $content->content_text !!}</p>
+                                <span><small>{{$content->created_at}} </small> | <small> {{$content->title}} </small></span>
+                                <h3><a href="">{{$content->title}}</a></h3>
+                                    <p>{!! \Illuminate\Support\Str::limit($content->content_text,80) !!}</p>
                             </div>
                         </div>
                     </div>

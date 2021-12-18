@@ -41,7 +41,11 @@
                 @else
                     <td>Henüz güncellenmedi</td>
                 @endif
-                <td><button>Sİl</button><button>Güncelle</button></td>
+                <td><form method="post" action="{{route('admin.deleteContent')}}">
+                        @csrf
+                        <input type="hidden" name="delete" value="{{$content->id}}">
+                        <button type="submit">SİL</button>
+                    </form><a href="{{route('admin.updateProduct',$content->id)}}">Güncelle</a></td>
                 </tbody>
 
             @endforeach

@@ -21,9 +21,9 @@ class CreateContentsTable extends Migration
             $table->string('language')->withcomment('DilSeçimi');
             $table->longText('content_text');
             $table->string('content_url_slug')->comment('url için girilicek');
-            $table->string('photo_1');
-            $table->string('photo_2');
-            $table->string('photo_3');
+            $table->longText('photo_1');
+            $table->longText('photo_2');
+            $table->longText('photo_3');
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories');

@@ -66,7 +66,6 @@
                       </div>
                   </div>
                   <div class="row">
-
                     @if(isset($categories_content['getContent']))
                         @foreach($categories_content['getContent'] as $content)
                               <div class="forSale animate-box" data-animate-effect="fadeInLeft">
@@ -81,14 +80,13 @@
                                   </div>
                               </div>
                         @endforeach
-                      @else
-                          <h1>BU ALANDA İÇERİK YOK</h1>
-                 @endif
+                            @endif
                   </div>
+
+
               </div>
 
           </div>
       </div>
-  @endif
-
+@endif
 @endsection
