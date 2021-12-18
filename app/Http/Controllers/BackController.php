@@ -35,7 +35,7 @@ else {
     }
     public function logOut() {
         Auth::logout();
-        return view('logScreen')->withSuccess(1);
+        return redirect()->route('logScreen')->withSuccess(1);
     }
     public function newMessage(Request $request){
         $validator=\Illuminate\Support\Facades\Validator::make($request->all(),[
