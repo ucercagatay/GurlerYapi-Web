@@ -66,6 +66,7 @@
                       </div>
                   </div>
                   <div class="row">
+                      @if(count($categories_content['getContent'])>0)
                     @if(isset($categories_content['getContent']))
                         @foreach($categories_content['getContent'] as $content)
                               <div class="forSale animate-box" data-animate-effect="fadeInLeft">
@@ -81,6 +82,10 @@
                               </div>
                         @endforeach
                             @endif
+                      @else
+                          <h1>Bu alanda çalışmalarımız en yakın sürede sizlerle</h1>
+                      @endif
+
                   </div>
 
 

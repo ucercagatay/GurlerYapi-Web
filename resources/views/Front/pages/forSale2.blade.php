@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="row">
-
+                    @if(count($contents)>0)
                     @foreach($contents as $content)
                         <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
                             <div class="blog-entry">
@@ -56,6 +56,9 @@
                             </div>
                         </div>
                     @endforeach
+                    @else
+                        <h1>Bu alanda çalışmalarımız en yakın sürede sizlerle</h1>
+                    @endif
 
                 </div>
 
