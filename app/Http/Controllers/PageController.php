@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\CategoryModel;
 use App\Models\ContentModel;
+use App\Models\ReferenceModel;
+use App\Models\SiteConfigModel;
 use App\Models\SubCategoriesModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -24,7 +26,9 @@ public function mainPage(Request $request){
         $categories=CategoryModel::where('language','türkçe')->with('subCategory')->get();
         $about=ContentModel::where('title','Hakkımızda')->get();
         $contents=ContentModel::where('category_id',2)->get()->all();
-        return view('welcome',compact('categories','contents','about'));
+        $site_config=SiteConfigModel::where('id',1)->first();
+        $references=ReferenceModel::all();
+        return view('welcome',compact('categories','contents','about','site_config','references'));
 }
 public function categoryPage(Request $request,$id){
     $categories_content=CategoryModel::where('id',$request->id)->with('getContent')->first();

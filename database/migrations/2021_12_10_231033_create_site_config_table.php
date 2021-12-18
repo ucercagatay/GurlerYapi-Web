@@ -18,7 +18,7 @@ class CreateSiteConfigTable extends Migration
             $table->string('mail_adress');
             $table->string('site_phoneNumber');
             $table->string('adress');
-            $table->string('maps_link');
+            $table->longText('maps_link');
             $table->timestamps();
         });
     }

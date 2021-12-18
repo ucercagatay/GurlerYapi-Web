@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
            //CategorySeeder::class,
            //
             //SubCategoriesSeeder::class,
-            //SiteConfigSeeder::class,
+            SiteConfigSeeder::class,
             //ContentSeeder::class,
         ]);
     }

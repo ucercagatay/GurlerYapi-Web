@@ -192,7 +192,7 @@
                 </div>
             </div>
         </div>
-        <div class="colorlib-work">
+     {{--<div class="colorlib-work">
             <div class="colorlib-narrow-content">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
@@ -281,7 +281,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
         <div class="colorlib-blog">
             <div class="colorlib-narrow-content">
                 <div class="row">
@@ -291,36 +291,18 @@
                     </div>
                 </div>
                 <div class="row">
+                    @foreach($contents as $content)
                     <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
                         <div class="blog-entry">
-                            <a href="blog.html" class="blog-img"><img  src="{{asset("front/images/blog-1.jpg")}}" class="img-responsive" ></a>
+                            <a href="blog.html" class="blog-img"><img  src="{{asset($content->photo_1)}}" class="img-responsive" ></a>
                             <div class="desc">
-                                <span><small>Nisan 14, 2018 </small> | <small> Proje 1 </small></span>
-                                <h3><a href="blog.html">Proje 1</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ad asperiores consectetur cupiditate debitis </p>
+                                <span><small>Nisan 14, 2018 </small> | <small> {{$content->title}} </small></span>
+                                <h3><a href="">Proje 1</a></h3>
+                                    <p>{!! $content->content_text !!}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-                        <div class="blog-entry">
-                            <a href="blog.html" class="blog-img"><img src="{{asset("front/images/blog-2.jpg")}}" class="img-responsive" ></a>
-                            <div class="desc">
-                                <span><small>Nisan 14, 2018 </small> | <small> Proje 2 </small></span>
-                                <h3><a href="blog.html">Proje 1</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ad asperiores consectetur cupiditate debitis </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-                        <div class="blog-entry">
-                            <a href="blog.html" class="blog-img"><img src="{{asset("front/images/blog-3.jpg")}}" class="img-responsive"></a>
-                            <div class="desc">
-                                <span><small>Nisan 14, 2018 </small> | <small> Proje 3 </small></span>
-                                <h3><a href="blog.html">Proje 1</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ad asperiores consectetur cupiditate debitis </p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -335,25 +317,18 @@
             </div>
             <div class="colorlib-narrow-content animate-box" data-animate-effect="fadeInLeft">
                 <div class="row">
+                    @foreach($references as $reference)
                     <div class="references">
-                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
-                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
-                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
-                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
-                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
-                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
-                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
-                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
-                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
-                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
-                        <a href=""><img src="{{asset("images/s2.png")}}" alt=""></a>
+                        <a href="{{$reference->reference_link}}"><img src="{{asset($reference->photo)}}" alt=""></a>
                     </div>
+                        @endforeach
                 </div>
             </div>
         </div>
         <div class="colorlib-navi">
             <div class="colorlib-narrow-content">
                 <div class="row">
+
                     <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
                         <span class="heading-meta">Bize Ulaşın</span>
                         <h2 class="colorlib-heading animate-box">İLETİŞİM</h2>
@@ -369,23 +344,23 @@
                                 <span class="icon">
                                     <i class="fas fa-2x fa-phone-alt"></i>
                                 </span>
-                                0555 555 55 55
+                                {{$site_config->site_phoneNumber}}
                             </div>
                             <div class="contact-icon">
                                 <span class="icon">
                                     <i class="fas fa-2x fa-map-marker-alt"></i>
-                                </span>
-                                Kültür, 23100 Merkez/Elâzığ Merkez/Elazığ
+                                </span>{{$site_config->adress}}
                             </div>
                             <div class="contact-icon">
                                 <span class="icon">
                                     <i class="fas fa-2x fa-envelope"></i>
                                 </span>
-                                gurleryapi@gmail.com
+                                {{$site_config->mail_adress}}
                             </div>
 
                         </div>
                     </div>
+
                     <div class="whiteArea">
                         <div class=" contact-form animate-box" data-animate-effect="fadeInLeft">
                             <form method="post" action="{{route('formPost')}}">
@@ -404,7 +379,7 @@
                                 <div>
                                     <div>
                                         <label for="">Telefon Numarası</label>
-                                        <input type="tel" name="phoneNumber" placeholder="(0555)-555-55-55" pattern="([0-9]{4})[0-9]{3}-[0-9]{2}-[0-9]{2}">
+                                        <input type="tel" name="phoneNumber" placeholder="(0555)-555-55-55" pattern="([0-9]{4}[0-9]{3}[0-9]{2}[0-9]{2})">
                                     </div>
                                     <div>
                                         <label for="">E-Mail</label>
@@ -415,9 +390,9 @@
                                 <label for="">Konu</label>
                                 <select name="option" id="">
                                     <option value="" disabled selected>Bilgi Almak İstenen Konular</option>
-                                    <option value="Kategori1">Kategori adı 1</option>
-                                    <option value="Kategori2">Kategori adı 2</option>
-                                    <option value="Kategori3">Kategori adı 3</option>
+                                    @foreach($categories as $category)
+                                    <option value="{{$category->category_name}}">{{$category->category_name}}</option>
+                                        @endforeach
                                 </select>
                                 <label for="">Mesajınız</label>
                                 <textarea name="message" id="" cols="90" rows="3" placeholder="Mesajınız"></textarea>
@@ -435,8 +410,9 @@
 
                 </div>
             </div>
-            <iframe style="    margin-bottom: -1vh; margin-top: 6vh; filter: invert(90%); border: 1px solid #ffffff;" class="animate-box" data-animate-effect="fadeInLeft" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8156.998315639303!2d39.203692281906946!3d38.67597168995606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4076c01523587a39%3A0xdf454f9e53d46568!2zRWxhesSxxJ8gQXRhdMO8cmsgU3RhZHl1bXU!5e0!3m2!1str!2str!4v1638652709377!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe style="    margin-bottom: -1vh; margin-top: 6vh; filter: invert(90%); border: 1px solid #ffffff;" class="animate-box" data-animate-effect="fadeInLeft" src="{{$site_config->maps_link}}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
+
 @endsection
 

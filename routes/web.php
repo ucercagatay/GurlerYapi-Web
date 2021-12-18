@@ -23,10 +23,13 @@ Route::post('/userpost',[Controllers\BackController::class,'loginControl'])->nam
 //Panel Routeları
 Route::prefix('/admin')->name('admin.')->group(function () {
     Route::get('/dashboard',[Controllers\PageController::class,'dashboard'])->name('dashboard');
+    Route::get('/showSubscribers',[Controllers\SiteConfigController::class,'showSubscribers'])->name('showSubscribers');
     Route::get('/showSiteConfigs',[Controllers\SiteConfigController::class,'showConfigs'])->name('siteConfigshow');
     Route::get('/showCategories',[Controllers\BackController::class,'showCategories'])->name('showCategories');
     Route::get('/showSubCategories',[Controllers\BackController::class,'showSubCategories'])->name('showSubCats');
+    Route::get('/showReferences',[Controllers\SiteConfigController::class,'showReferences'])->name('showReferences');
     Route::get('/showProducts',[Controllers\BackController::class,'getContents'])->name('getContents');
+    Route::get('/showMessages',[Controllers\SiteConfigController::class,'showMessages'])->name('showMessages');
     Route::get('/newCategory',[Controllers\BackController::class,'catForm'])->name('catForm');
     Route::post('/addCategories',[Controllers\BackController::class,'addCategories'])->name('addCategories');
     Route::get('/newProduct',[Controllers\BackController::class,'contentForm'])->name('product');

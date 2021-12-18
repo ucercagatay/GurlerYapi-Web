@@ -109,7 +109,7 @@
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Site Kontrolü:</h6>
-                    <a class="collapse-item" href="">Referansları Düzenle</a>
+                    <a class="collapse-item" href="{{route('admin.showReferences')}}">Referansları Düzenle</a>
                     <a class="collapse-item" href="{{route('admin.siteConfigshow')}}">Config Düzenle</a>
                 </div>
             </div>
@@ -142,12 +142,12 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="tables.html">
+            <a class="nav-link" href="{{Route('admin.showMessages')}}">
                 <i class="fas fa-fw fa-mail-bulk"></i>
                 <span>Gelen Mesajlar</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('admin.showSubscribers')}}">
                 <i class="fas fa-fw fa-user"></i>
                 <span>Aboneler</span></a>
 
