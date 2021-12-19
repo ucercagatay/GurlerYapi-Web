@@ -22,7 +22,7 @@
                             @csrf
                             <input type="hidden" name="delete" value="{{$reference->id}}">
                             <button class="btn btn-danger" type="submit">SİL</button>
-                        </form><a class="btn btn-warning" style="margin-left: 2%" href="{{route('admin.updatePate',$reference->id)}}">Güncelle</a></td>
+                        </form><a class="btn btn-warning" style="margin-left: 2%" href="{{route('admin.updatePage',$reference->id)}}">Güncelle</a></td>
             </tr>
                 @endforeach
             </tbody>

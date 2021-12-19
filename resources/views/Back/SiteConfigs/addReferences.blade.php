@@ -14,7 +14,7 @@
                 <input type="file" name="photo"> <br>
             </div>
             <div><label>Reference Linki</label> <br>
-                <input type="text" name="refence_link"> <br>
+                <input type="text" name="reference_link"> <br>
             </div>
             <button class="btn btn-success" type="submit">Ekle</button>
 

@@ -1,7 +1,8 @@
 @extends('back.layouts.master')
 @section('content')
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Hoşgeldin <strong>Yusuf Çağlar Aksoy</strong></h1>
+
+        <h1 class="h3 mb-0 text-gray-800">Hoşgeldin <strong>{{$user->name}} {{$user->surname}}</strong></h1>
 
     </div>
     <!-- DataTales Example -->
@@ -10,23 +11,23 @@
             <div class="datas">
                 <div class="dataCard">
                     <i class="fas fa-envelope"></i>
-                    <h2>11</h2>
-                    <h5>Okunmamış Mesaj Sayısı</h5>
+                    <h2>{{count($messages)}}</h2>
+                    <h5>Mesaj Sayısı</h5>
                 </div>
                 <div class="dataCard">
                     <i class="fas fa-tags"></i>
-                    <h2>11</h2>
+                    <h2>{{count($contentSa)}}</h2>
                     <h5>Satılık İlan Sayısı</h5>
                 </div>
                 <div class="dataCard">
                     <i class="fas fa-sign"></i>
-                    <h2>11</h2>
+                    <h2>{{count($contents)}}</h2>
                     <h5>Kiralık İlan Sayısı</h5>
                 </div>
                 <div class="dataCard">
                     <i class="fas fa-users"></i>
                     <h2>11</h2>
-                    <h5>Ziyaretçi Sayısı</h5>
+                    <h5>Deneme</h5>
                 </div>
             </div>
         </div>

@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\CategoryModel;
 use App\Models\ContentModel;
+use App\Models\FormModel;
 use App\Models\ReferenceModel;
 use App\Models\SiteConfigModel;
 use App\Models\SubCategoriesModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
@@ -18,7 +20,11 @@ class PageController extends Controller
     }
     //dashboard
     public function dashboard(){
-        return view('back.panel');
+        $user = Auth::user();
+        $contentSa=ContentModel::where('id',2)->get();
+        $contents=ContentModel::where('id',3)->get();
+        $messages=FormModel::all();
+        return view('back.panel',compact('user','contents','contentSa','messages'));
     }
 //Front Pages
 //MainPage

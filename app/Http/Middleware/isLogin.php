@@ -17,7 +17,7 @@ class isLogin
      */
     public function handle(Request $request, Closure $next)
     {  if(!Auth::check()){
-        return redirect()->route('admin.login')->withErrors('Bu alana erişim sağlayamazsınız');
+        return redirect()->route('logScreen')->withErrors('Bu alana erişim sağlayamazsınız');
     }
         return $next($request);
     }

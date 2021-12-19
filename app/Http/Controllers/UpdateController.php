@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\CategoryModel;
 use App\Models\ContentModel;
+use App\Models\ReferenceModel;
+use App\Models\SiteConfigModel;
 use App\Models\SubCategoriesModel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -45,8 +47,8 @@ class UpdateController extends Controller
         $subcats=SubCategoriesModel::all();
         return view('back.contents.updateContent',compact('subcats','content','categories'));
     }
-    public function updateProductPost(request $request){
-        $content= ContentModel::find('id',$request->id);
+    public function updateProductPost(request $request,$id){
+        $content= ContentModel::find($id);
         $content->category_id = $request->category_id;
         $content->sub_category_id = $request->sub_category_id;
         $content->title = $request->title;
@@ -71,4 +73,34 @@ class UpdateController extends Controller
         $content->save();
         return redirect()->route('admin.dashboard');
     }
+    public function updateReferencePage(Request $request){
+        $reference=ReferenceModel::where('id',$request->id)->first();
+        return view('back.SiteConfigs.updateReferences',compact('reference'));
+}
+public function updateReferencePagePost(Request $request,$id){
+        $reference=ReferenceModel::find($id);
+        $reference->reference_name = $request->reference_name;
+        $reference->reference_link = $request->reference_link;
+        if ($request->hasFile('photo')){
+            $imageName = $request->title . '' .$request->photo->getClientOriginalExtension();
+            $request->photo->move(public_path('uploads'), $imageName);
+            $reference->photo = 'uploads/' . $imageName;
+        }
+        $reference->save();
+        return back();
+}
+        public function updateConfigPage(Request $request){
+        $config=SiteConfigModel::where('id',$request->id)->first();
+        return view('back.siteConfigs.updateConfig',compact('config'));
+
+        }
+        public function PostConfigPage(Request $request,$id){
+        $config=SiteConfigModel::find($id);
+        $config->mail_adress = $request->mail_adress;
+        $config->site_phoneNumber = $request->site_phoneNumber;
+        $config->adress = $request->adress;
+        $config->maps_link = $request->maps_link;
+        $config->save();
+        return back();
+        }
 }

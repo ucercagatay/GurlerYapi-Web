@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ReferenceModel extends Model
 {
     protected $table='references';
-    protected $guarded='id';
+    protected $primaryKey='id';
     use HasFactory;
 }

@@ -21,7 +21,7 @@
                     <td>{{$config->adress}}</td>
                     <td>{{$config->maps_link}}</td>
                     <td>{{$config->updated_at}}</td>
-                    <td><button class="btn btn-warning">Güncelle</button></td>
+                    <td><a href="{{route('admin.updateConfigPage',$config->id)}}" class="btn btn-warning">Güncelle</a></td>
             </tr>
            @endforeach
             </tbody>

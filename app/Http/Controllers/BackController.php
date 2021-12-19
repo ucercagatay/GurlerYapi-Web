@@ -7,6 +7,7 @@ use App\Models\ContentModel;
 use App\Models\FormModel;
 use App\Models\RoleModel;
 use App\Models\SubCategoriesModel;
+use App\Models\SubscribersModel;
 use App\Models\UserModel;
 use Dotenv\Validator;
 use Illuminate\Http\Request;
@@ -30,8 +31,16 @@ class BackController extends Controller
 else {
     return back()->withSuccess(2);
 }
+
 //Form İşlemleri
 //Anasayfa Form Gönderim İşlemi
+    }
+    public function getSub(Request $request){
+        $subscriber = new SubscribersModel();
+        $subscriber->email = $request->email;
+        $subscriber->save();
+        return back();
+
     }
     public function logOut() {
         Auth::logout();

@@ -321,6 +321,7 @@
                         <a href="{{$reference->reference_link}}"><img src="{{asset($reference->photo)}}" alt=""></a>
                     </div>
                         @endforeach
+
                 </div>
             </div>
         </div>
@@ -401,8 +402,12 @@
                         <div class="contact-image animate-box" data-animate-effect="fadeInLeft">
                             <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h5>
                             <img src="{{asset("front/images/contact.jpg")}}" alt="">
-                            <label for="">E-Mail</label>
-                            <div><input type="email"> <a href="">Abone Ol</a></div>
+
+                          <form method="post" action="{{route('subscriber')}}">
+                              @csrf
+                              <label for="">E-Mail</label>
+                              <div><input type="email" name="email"> <a href=""><button type="submit">Gönder</button></a></div>
+                          </form>
 
                         </div>
                     </div>

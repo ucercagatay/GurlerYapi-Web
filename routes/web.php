@@ -16,16 +16,16 @@ use App\Http\Controllers;
 Route::get('/test',[Controllers\AjaxController::class,'test'])->name('test');
 //Anasayfa ve Login Routeları
 Route::get('/',[Controllers\PageController::class,'mainPage'])->name('mainpage');
+Route::post('/subPost',[Controllers\BackController::class,'getSub'])->name('subscriber');
 Route::post('/formpost',[Controllers\BackController::class,'newMessage'])->name('formPost');
 //Login
-Route::get('/login',[Controllers\PageController::class,'loginScreen'])->name('logScreen');
+Route::get('/login',[Controllers\PageController::class,'loginScreen'])->middleware('is_out')->name('logScreen');
 Route::post('/userpost',[Controllers\BackController::class,'loginControl'])->name('logpost');
 Route::post('/logOut',[Controllers\BackController::class,'logOut'])->name('logOut');
 //Panel Routeları
-Route::prefix('/admin')->name('admin.')->group(function () {
+Route::prefix('/admin')->name('admin.')->middleware('is_login')->group(function () {
     Route::get('/dashboard',[Controllers\PageController::class,'dashboard'])->name('dashboard');
    //Kategori Routeları
-    Route::get('/showSiteConfigs',[Controllers\SiteConfigController::class,'showConfigs'])->name('siteConfigshow');
     Route::get('/showCategories',[Controllers\BackController::class,'showCategories'])->name('showCategories');
     Route::get('/updateCategory/{id}',[Controllers\UpdateController::class,'updateCategory'])->name('updateCategory');
     Route::post('/postCategory/{id}',[Controllers\UpdateController::class,'updatePostCategory'])->name('catPostUpdate');
@@ -53,8 +53,12 @@ Route::prefix('/admin')->name('admin.')->group(function () {
     Route::post('/postReferences',[Controllers\SiteConfigController::class,'postRef'])->name('postReferences');
     Route::post('/deleteReference',[Controllers\DeleteController::class,'deleteReference'])->name('deleteReference');
     Route::get('/updateReference/{id}',[Controllers\UpdateController::class,'updateReferencePage'])->name('updatePage');
-    Route::post('/updateReferencePost/{id}',[Controllers\UpdateController::class,'updateReference'])->name('updatePostref');
+    Route::post('/updateReferencePost/{id}',[Controllers\UpdateController::class,'updateReferencePagePost'])->name('updatePostReference');
 //Refernce routeları bitiş
+    //Configs
+    Route::get('/showSiteConfigs',[Controllers\SiteConfigController::class,'showConfigs'])->name('siteConfigshow');
+    Route::get('/updateSiteConfig/{id}',[Controllers\UpdateController::class,'updateConfigPage'])->name('updateConfigPage');
+    Route::post('/updatePostConfig/{id}',[Controllers\UpdateController::class,'PostConfigPage'])->name('updateConfig');
     Route::get('/showMessages',[Controllers\SiteConfigController::class,'showMessages'])->name('showMessages');
     Route::get('/showSubscribers',[Controllers\SiteConfigController::class,'showSubscribers'])->name('showSubscribers');
 
