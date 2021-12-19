@@ -14,7 +14,7 @@ class PageController extends Controller
 {
     //BACK PAGES
     public function loginScreen(){
-        return view('login-page');
+        return view('back.login');
     }
     //dashboard
     public function dashboard(){

@@ -23,20 +23,23 @@
 
 </head>
 <body>
+<form method="post" action="{{route('logpost')}}">
     <div class="login-body">
+        @csrf
         <div class="login-modal">
             <div>
                 <img src="{{asset("images/s2.png")}}" alt="">
             </div>
             <div>
-                <input class="check-mail" type="text">
+                <input name="email" class="check-mail" type="email">
                 <label for="">E-Posta</label>
             </div>
             <div>
-                <input class="check-password" type="text">
+                <input name="password" class="check-password" type="password">
                 <label for="">Şifre</label>
             </div>
-            <a href="">Oturumu Aç</a>
+            <button type="submit" href="">Oturumu Aç</button>
+            </form>
         </div>
     </div>
 </body>
