@@ -1373,6 +1373,7 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
 .colorlib-navi .contact-form textarea{
     margin-bottom: 2vh;
     padding: 0 1.5%;
+    border-width: 1px;
 }
 .colorlib-navi .contact-form textarea:focus-visible{
     outline: none;
@@ -1396,12 +1397,14 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
     width: 100%;
     height: 38px;
     padding: 0 3%;
+    border-width: 1px;
 }
 .colorlib-navi .contact-form select{
     width: 100%;
     height: 38px;
     padding: 0 1%;
     margin-bottom: 2vh;
+    border-width: 1px;
 }
 .colorlib-navi .contact-form div input:focus-visible{
     outline: none;
@@ -1434,7 +1437,7 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
 .colorlib-navi .contact-image div{
     margin-bottom: 2vh;
 }
-.colorlib-navi .contact-image div a{
+.colorlib-navi .contact-image div a button{
     position: absolute;
     top: -1px;
     right: -2px;
@@ -1449,8 +1452,9 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
 }
-.colorlib-navi .contact-image div a:hover{
+.colorlib-navi .contact-image div a button:hover{
     background: #e3ae03;
 }
 @media only screen and (max-width: 1300px) {

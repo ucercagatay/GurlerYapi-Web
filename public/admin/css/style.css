@@ -157,14 +157,17 @@
     padding: 0 14px;
     transition: 300ms all;
 }
-.login-body .login-modal a{
+.login-body .login-modal button{
     color: #282826;
     padding: 6px 14px;
     border: 1px solid white;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color:white;
+    margin-bottom: 4vh;
+    transition: 500ms all;
 }
-.login-body .login-modal a:hover{
-    background-color: white;
+.login-body .login-modal button:hover{
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
     text-decoration: none;
 }
 .login-body .login-modal div input:focus + label{
