@@ -24,6 +24,11 @@ class CreateContentsTable extends Migration
             $table->longText('photo_1');
             $table->longText('photo_2');
             $table->longText('photo_3');
+            $table->longText('photo_4');
+            $table->longText('photo_5');
+            $table->longText('photo_6');
+            $table->longText('photo_7');
+
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories');

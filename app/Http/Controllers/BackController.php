@@ -36,10 +36,16 @@ else {
 //Anasayfa Form Gönderim İşlemi
     }
     public function getSub(Request $request){
+        $validator=\Illuminate\Support\Facades\Validator::make($request->all(),[
+            'email' =>'required|email|unique:subscribers,email'
+        ]);
+        if($validator->fails()){
+            return Redirect::to(URL::previous().'#subscriber')->withErrors($validator,'subscriber');
+        }
         $subscriber = new SubscribersModel();
         $subscriber->email = $request->email;
         $subscriber->save();
-        return back();
+        return back()->withSuccess(1);
 
     }
     public function logOut() {
@@ -68,7 +74,7 @@ else {
             'created_at'=>now(),
             'updated_at'=>now(),
         ]);
-        return back();
+        return back()->withSuccess(2);
     }
 //Form görüntüleme
 public function getMessages(){
@@ -115,6 +121,25 @@ public function addContent(Request $request){
         $imageName = $request->title . '3.' . $request->photo_3->getClientOriginalExtension();
         $request->photo_3->move(public_path('uploads'), $imageName);
         $content->photo_3 = 'uploads/' . $imageName;
+    }
+    if ($request->hasFile('photo_4')) {
+        $imageName = $request->title . '4.' . $request->photo_4->getClientOriginalExtension();
+        $request->photo_4->move(public_path('uploads'), $imageName);
+        $content->photo_4 = 'uploads/' . $imageName;
+    }
+    if ($request->hasFile('photo_5')) {
+        $imageName = $request->title . '5.' . $request->photo_5->getClientOriginalExtension();
+        $request->photo_5->move(public_path('uploads'), $imageName);
+        $content->photo_5 = 'uploads/' . $imageName;
+    }
+    if ($request->hasFile('photo_6')) {
+        $imageName = $request->title . '6.' . $request->photo_6->getClientOriginalExtension();
+        $request->photo_6->move(public_path('uploads'), $imageName);
+        $content->photo_6 = 'uploads/' . $imageName;
+    }  if ($request->hasFile('photo_7')) {
+        $imageName = $request->title . '7.' . $request->photo_7->getClientOriginalExtension();
+        $request->photo_7->move(public_path('uploads'), $imageName);
+        $content->photo_7 = 'uploads/' . $imageName;
     }
     $content->save();
         return redirect()->route('admin.dashboard');

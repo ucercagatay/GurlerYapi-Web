@@ -21,6 +21,20 @@ class SubCategoriesSeeder extends Seeder
             'created_at'=>now(),
             'updated_at'=>now(),
         ]);
+        DB::table('sub_categories')->insert([
+            'name'=>'Villa',
+            'category_id'=>3,
+            'sub_category_url' =>'daire',
+            'created_at'=>now(),
+            'updated_at'=>now(),
+        ]);
+        DB::table('sub_categories')->insert([
+            'name'=>'Çiftlik Evi',
+            'category_id'=>3,
+            'sub_category_url' =>'daire',
+            'created_at'=>now(),
+            'updated_at'=>now(),
+        ]);
 
 
 

@@ -6,7 +6,9 @@
 
                 <ul class="slides">
                     @foreach($contents as $content)
-                    <li style="background-image:url({{asset($content->photo_1)}})" alt="fotogelicek">
+                    <li style="background-image:url('{{asset($content->photo_1)}}')"
+                         alt="fotogelicek">
+
                         <div class="overlay"></div>
                         <div class="container-fluid">
                             <div class="row">
@@ -14,7 +16,7 @@
                                     <div class="slider-text-inner">
                                         <div class="desc">
                                             <h1>{{$content->title}}</h1>
-                                            <h2>{!! \Illuminate\Support\Str::limit($content->content_text,80) !!}</h2>
+                                            <h2>{{  strip_tags(\Illuminate\Support\Str::limit($content->content_text,80))}}</h2>
                                             <p><a href="{{route('front.saleDetail',$content->id)}}" class="btn btn-primary btn-learn">Daha Fazlasını Gör <i class="icon-arrow-right3"></i></a></p>
                                         </div>
                                     </div>
@@ -316,12 +318,17 @@
             </div>
             <div class="colorlib-narrow-content animate-box" data-animate-effect="fadeInLeft">
                 <div class="row">
+                    @if(count($references)>0)
                     @foreach($references as $reference)
                     <div class="references">
-                        <a href="{{$reference->reference_link}}"><img src="{{asset($reference->photo)}}" alt=""></a>
+                        <a href="{{$reference->reference_link}}"  target="_blank"><img src="{{asset($reference->photo)}}" alt="gelecek.jpg"></a>
                     </div>
                         @endforeach
-
+                    @else
+                        <div class="references">
+                            <h1>Şu anda bakım aşamasındadır</h1>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -403,12 +410,12 @@
                             <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h5>
                             <img src="{{asset("front/images/contact.jpg")}}" alt="">
 
-                          <form method="post" action="{{route('subscriber')}}">
+                          <form method="post" id="subscriber" action="{{route('subscriber')}}">
                               @csrf
                               <label for="">E-Mail</label>
                               <div><input type="email" name="email"> <a href=""><button type="submit">Gönder</button></a></div>
                           </form>
-
+                            </div>
                         </div>
                     </div>
 
@@ -417,6 +424,5 @@
             <iframe style="    margin-bottom: -1vh; margin-top: 6vh; filter: invert(90%); border: 1px solid #ffffff;" class="animate-box" data-animate-effect="fadeInLeft" src="{{$site_config->maps_link}}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
-
 @endsection
 

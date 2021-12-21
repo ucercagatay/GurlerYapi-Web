@@ -57,6 +57,22 @@
                 <input type="file" name="photo_3"> <br><img src="{{asset($content->photo_3)}}"
                                                             style="width:200px; height: 175px;">
             </div>
+            <div><label>Fotoğraf 4</label><br>
+                <input type="file" name="photo_4"> <br><img src="{{asset($content->photo_4)}}"
+                                                            style="width:200px; height: 175px;">
+            </div>
+            <div><label>Fotoğraf 5</label><br>
+                <input type="file" name="photo_5"> <br><img src="{{asset($content->photo_5)}}"
+                                                            style="width:200px; height: 175px;">
+            </div>
+            <div><label>Fotoğraf 6</label><br>
+                <input type="file" name="photo_6"> <br><img src="{{asset($content->photo_6)}}"
+                                                            style="width:200px; height: 175px;">
+            </div>
+            <div><label>Fotoğraf 7</label><br>
+                <input type="file" name="photo_7"> <br><img src="{{asset($content->photo_7)}}"
+                                                            style="width:200px; height: 175px;">
+            </div>
             <button type="submit">Güncelle</button>
         </form>
 

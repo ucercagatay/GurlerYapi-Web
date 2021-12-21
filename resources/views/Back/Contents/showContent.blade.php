@@ -37,7 +37,15 @@
                     <td><img style="width:200px; height:200px;" src="{{asset($content->photo_1)}}"></td>
                     <td><img style="width:200px; height:200px;" src="{{asset($content->photo_2)}}"></td>
                     <td><img style="width:200px; height:200px;" src="{{asset($content->photo_3)}}"></td>
-                    <td>{{$content->created_at}}</td>
+                        <td><img style="width:200px; height:200px;" src="{{asset($content->photo_4)}}"></td>
+
+                        <td><img style="width:200px; height:200px;" src="{{asset($content->photo_5)}}"></td>
+
+                        <td><img style="width:200px; height:200px;" src="{{asset($content->photo_6)}}"></td>
+
+                        <td><img style="width:200px; height:200px;" src="{{asset($content->photo_7)}}"></td>
+
+                        <td>{{$content->created_at}}</td>
                     @if($content->updated_at !=NULL)
                         <td>{{$content->updated_at}}</td>
                     @else

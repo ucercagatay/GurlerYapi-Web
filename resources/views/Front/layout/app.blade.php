@@ -84,7 +84,6 @@
     @yield('content')
 
 </div>
-
 <!-- jQuery -->
 <script src="{{asset("front/js/jquery.min.js")}}" ></script>
 <!-- jQuery Easing -->
@@ -105,6 +104,5 @@
 
 <!-- MAIN JS -->
 <script src="{{asset("front/js/main.js")}}" ></script>
-
 </body>
 </html>

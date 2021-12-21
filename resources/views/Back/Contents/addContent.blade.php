@@ -54,6 +54,18 @@
             <div><label>Fotoğraf 3</label><br>
                 <input type="file" name="photo_3"> <br>
             </div>
+            <div><label>Fotoğraf 4</label><br>
+                <input type="file" name="photo_4"> <br>
+            </div>
+            <div><label>Fotoğraf 5</label><br>
+                <input type="file" name="photo_5"> <br>
+            </div>
+            <div><label>Fotoğraf 6</label><br>
+                <input type="file" name="photo_6"> <br>
+            </div>
+            <div><label>Fotoğraf 7</label><br>
+                <input type="file" name="photo_7"> <br>
+            </div>
             <button class="btn btn-success" type="submit">Ekle</button>
         </form>
     </div>

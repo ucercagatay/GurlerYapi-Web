@@ -98,6 +98,18 @@
                                 <div class="swiper-slide">
                                     <img src="{{asset($content->photo_3)}}" alt="">
                                 </div>
+                                <div class="swiper-slide">
+                                    <img src="{{asset($content->photo_4)}}" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{asset($content->photo_5)}}" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{asset($content->photo_7)}}" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{asset($content->photo_6)}}" alt="">
+                                </div>
                             </div>
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
@@ -105,13 +117,25 @@
                         <div thumbsSlider="" class="swiper mySwiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src={{asset($content->photo_1)}} alt="">
+                                    <img src="{{asset($content->photo_1)}}" alt="">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src={{asset($content->photo_2)}} alt="">
+                                    <img src="{{asset($content->photo_2)}}" alt="">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src={{asset($content->photo_3)}} alt="">
+                                    <img src="{{asset($content->photo_3)}}" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{asset($content->photo_4)}} "alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{asset($content->photo_5)}}" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{asset($content->photo_6)}}" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{asset($content->photo_7)}}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -128,14 +152,14 @@
         <script>
             var swiper = new Swiper(".mySwiper", {
                 loop: false,
-                spaceBetween: 3,
-                slidesPerView: 3,
+                spaceBetween: 1,
+                slidesPerView: 7,
                 freeMode: true,
                 watchSlidesProgress: true,
             });
             var swiper2 = new Swiper(".mySwiper2", {
                 loop: true,
-                spaceBetween: 3,
+                spaceBetween: 1,
                 navigation: {
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
