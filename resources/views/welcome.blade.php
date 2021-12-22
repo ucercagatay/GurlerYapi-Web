@@ -28,11 +28,11 @@
                 </ul>
             </div>
         </aside>
+        @foreach($about as $aboutus)
         <div class="colorlib-about">
             <div class="colorlib-narrow-content">
                 <div class="row">
                     <div class="col-md-6">
-                        @foreach($about as $aboutus)
                         <div class="about-img animate-box" data-animate-effect="fadeInLeft" style="    box-shadow: 0 0 20px 1px #0000006b; background-image: url({{asset($aboutus->photo_1)}})">
                         </div>
                     </div>
@@ -42,7 +42,6 @@
 
                             <h2 class="colorlib-heading">{{$aboutus->title}}</h2>
                             {!! $aboutus->content_text !!}
-                         @endforeach
                         </div>
 
                         <div class="row padding">
@@ -69,6 +68,7 @@
                 </div>
             </div>
         </div>
+        @endforeach
         <div class="colorlib-services">
             <div class="colorlib-narrow-content">
                 <div class="row">
@@ -291,18 +291,20 @@
                         <h2 class="colorlib-heading">SATIŞTA OLAN PROJELER</h2>
                     </div>
                 </div>
-                @foreach($contents as $content)
                 <div class="row">
-                    <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-                        <div class="blog-entry">
-                            <a href="blog.html" class="blog-img"><img  src="{{asset($content->photo_1)}}" class="img-responsive" ></a>
-                            <div class="desc">
-                                <span><small>{{$content->created_at}} </small> | <small> {{$content->title}} </small></span>
-                                <h3><a href="">{{$content->title}}</a></h3>
-                                    <p>{!! \Illuminate\Support\Str::limit($content->content_text,80) !!}</p>
+                    @foreach($contents as $content)
+                        <a href="{{route('front.saleDetail',$content->id)}}">
+                        <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+                            <div class="blog-entry">
+                                <a href="{{route('front.saleDetail',$content->id)}}" class="blog-img"><img  src="{{asset($content->photo_1)}}" class="img-responsive" ></a>
+                                <div class="desc">
+                                    <span><small>{{$content->created_at}} </small> | <small> {{$content->title}} </small></span>
+                                    <h3><a href="{{route('front.saleDetail',$content->id)}}">{{$content->title}}</a></h3>
+                                        <p>{!! \Illuminate\Support\Str::limit($content->content_text,80) !!}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     @endforeach
                 </div>
             </div>

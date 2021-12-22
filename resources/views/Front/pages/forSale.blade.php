@@ -71,7 +71,7 @@
                         @foreach($categories_content['getContent'] as $content)
                               <div class="forSale animate-box" data-animate-effect="fadeInLeft">
                                   <div class="blog-entry">
-                                      <a href="" class="blog-img"><img  src="{{asset($content->photo_1)}}" class="img-responsive" ></a>
+                                      <a href="{{route('front.saleDetail',$content->id)}}" class="blog-img"><img  src="{{asset($content->photo_1)}}" class="img-responsive" ></a>
                                       <div class="desc">
                                           <span><small>{{$content->created_at}} </small> | <small>{{$content->title}}</small></span>
                                           <h3><a href="">{{$content->title}}</a></h3>
