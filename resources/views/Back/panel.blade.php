@@ -26,8 +26,8 @@
                 </div>
                 <div class="dataCard">
                     <i class="fas fa-users"></i>
-                    <h2>11</h2>
-                    <h5>Deneme</h5>
+                    <h2>{{count($userCount)}}</h2>
+                    <h5>Admin Sayısı</h5>
                 </div>
             </div>
         </div>

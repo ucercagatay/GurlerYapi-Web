@@ -13,6 +13,7 @@ use Dotenv\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\URL;
 
@@ -180,14 +181,26 @@ public function showSubCategories(){
         $category2=CategoryModel::where('id',3)->get();
         return view('back.SubCategories.showSubCats',compact('subCats','category1','category2'));
 }
-//Ekleme
+//Admin görüntüle
+public function showUsers(){
+        $users=UserModel::all();
+        return view('back.SiteConfigs.Admin.showAdmins',compact('users',));
+}
+public function newAdminCreate(Request $request){
+        $admin= new UserModel();
+        $admin->role_id = $request->role_id;
+        $admin->name = $request->name;
+        $admin->surname = $request->surname;
+        $admin->email = $request->email;
+        $admin->password = Hash::make($request->password);
+        $admin->created_at=now();
+        $admin->save();
 
+        return redirect()->route('admin.dashboard');
 
+}
+public function newAdminPage() {
 
-//Silme
-
-//Güncelleme
-
-
-//Bitiş
+        return view('back.SiteConfigs.Admin.addAdmin');
+}
 }

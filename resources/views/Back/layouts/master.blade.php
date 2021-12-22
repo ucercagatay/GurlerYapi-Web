@@ -31,7 +31,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{Route('admin.dashboard')}}">
             <img src="{{asset("images/logo_2.png")}}" alt="">
             <div class="sidebar-brand-text mx-3">Gürler Yapı Panel</div>
         </a>
@@ -41,7 +41,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="{{Route('admin.dashboard')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Yönetim Paneli</span></a>
         </li>
@@ -134,8 +134,8 @@
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Kullanıcı:Admin</h6>
-                    <a class="collapse-item" href="">Adminleri Düzenle</a>
-                    <a class="collapse-item" href="">Kullanıcı Ekle</a>
+                    <a class="collapse-item" href="{{route('admin.showAdmins')}}">Adminleri Düzenle</a>
+                    <a class="collapse-item" href="{{route('admin.newAdmin')}}">Kullanıcı Ekle</a>
                 </div>
             </div>
         </li>

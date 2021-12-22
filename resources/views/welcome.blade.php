@@ -36,7 +36,7 @@
                         <div class="about-img animate-box" data-animate-effect="fadeInLeft" style="    box-shadow: 0 0 20px 1px #0000006b; background-image: url({{asset($aboutus->photo_1)}})">
                         </div>
                     </div>
-                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                    <div id="about" class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                         <div class="about-desc">
                             <span class="heading-meta">HOŞGELDİNİZ</span>
 
@@ -46,19 +46,19 @@
 
                         <div class="row padding">
                             <div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
-                                <a href="#" class="steps active">
+                                <a href="#about" class="steps active">
                                     <p class="icon"><span><i class="icon-check"></i></span></p>
                                     <h3>TUTKUYLA <br>ÇALIŞMA</h3>
                                 </a>
                             </div>
                             <div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
-                                <a href="#" class="steps">
+                                <a href="#about" class="steps">
                                     <p class="icon"><span><i class="icon-check"></i></span></p>
                                     <h3>AÇIK SÖZLÜ <br>GÜVENİLİR İLETİŞİM</h3>
                                 </a>
                             </div>
                             <div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
-                                <a href="#" class="steps">
+                                <a href="#about" class="steps">
                                     <p class="icon"><span><i class="icon-check"></i></span></p>
                                     <h3>HER ZAMAN <br>YENİLİĞE AÇIK</h3>
                                 </a>

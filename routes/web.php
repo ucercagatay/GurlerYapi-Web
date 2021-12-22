@@ -25,6 +25,13 @@ Route::post('/logOut',[Controllers\BackController::class,'logOut'])->name('logOu
 //Panel Routeları
 Route::prefix('/admin')->name('admin.')->middleware('is_login')->group(function () {
     Route::get('/dashboard',[Controllers\PageController::class,'dashboard'])->name('dashboard');
+    //Admin Routeları
+    Route::get('/showAdmins',[Controllers\BackController::class,'showUsers'])->name('showAdmins');
+    Route::get('/newAdmins',[Controllers\BackController::class,'newAdminPage'])->name('newAdmin');
+    Route::post('/newAdminPost',[Controllers\BackController::class,'newAdminCreate'])->name('newAdminPost');
+    Route::get('/editadmins/{id}',[Controllers\UpdateController::class,'updateAdminPage'])->name('editAdmins');
+    Route::post('/editadminsPost/{id}',[Controllers\UpdateController::class,'updateAdminPost'])->name('editAdminsPost');
+    Route::post('/deleteAdmin',[Controllers\DeleteController::class,'deleteAdmin'])->name('deleteAdmin');
    //Kategori Routeları
     Route::get('/showCategories',[Controllers\BackController::class,'showCategories'])->name('showCategories');
     Route::get('/updateCategory/{id}',[Controllers\UpdateController::class,'updateCategory'])->name('updateCategory');

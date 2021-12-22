@@ -8,6 +8,7 @@ use App\Models\FormModel;
 use App\Models\ReferenceModel;
 use App\Models\SubCategoriesModel;
 use App\Models\SubscribersModel;
+use App\Models\UserModel;
 use Illuminate\Http\Request;
 
 class DeleteController extends Controller
@@ -34,6 +35,10 @@ class DeleteController extends Controller
     }
     public function deleteReference(Request $request){
         ReferenceModel::where('id',$request->delete)->delete();
+        return redirect()->route('admin.dashboard');
+    }
+    public function deleteAdmin(Request $request){
+        UserModel::where('id',$request->delete)->delete();
         return redirect()->route('admin.dashboard');
     }
 }

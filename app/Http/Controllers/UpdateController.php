@@ -7,8 +7,11 @@ use App\Models\ContentModel;
 use App\Models\ReferenceModel;
 use App\Models\SiteConfigModel;
 use App\Models\SubCategoriesModel;
+use App\Models\User;
+use App\Models\UserModel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UpdateController extends Controller
 {
@@ -102,5 +105,19 @@ public function updateReferencePagePost(Request $request,$id){
         $config->maps_link = $request->maps_link;
         $config->save();
         return back();
+        }
+        public function updateAdminPage(Request $request,$id){
+            $user = UserModel::where('id',$request->id)->first();
+            return view('back.SiteConfigs.Admin.editAdmins',compact('user'));
+        }
+        public function updateAdminPost(Request $request,$id){
+        $admin=UserModel::find($id);
+        $admin->name = $request->name;
+        $admin->surname = $request->surname;
+        $admin->role_id = $request->role_id;
+        $admin->email = $request->email;
+        $admin->password = Hash::make($request->password);
+        $admin->save();
+        return redirect()->route('admin.dashboard');
         }
 }

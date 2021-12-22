@@ -31,15 +31,14 @@
 
                   <div class="row">
                       <div class="col-md-6">
-                          <div class="about-img animate-box" data-animate-effect="fadeInLeft" style="    box-shadow: 0 0 20px 1px #0000006b; background-image: url({{asset("front/images/img_bg_2.jpg")}})">
+                          <div class="about-img animate-box" data-animate-effect="fadeInLeft" style="    box-shadow: 0 0 20px 1px #0000006b; background-image: url({{asset($about_content->photo_1)}})">
                           </div>
                       </div>
                       <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                           <div class="about-desc">
                               <span class="heading-meta">HOŞGELDİNİZ</span>
-                              <h2 class="colorlib-heading">BİZ KİMİZ</h2>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequatur dolore doloremque, eius eum fuga id modi pariatur quasi tenetur. Culpa, dolore eaque error excepturi magni molestias possimus repudiandae voluptatibus eius eum fuga id modi pariatur!</p>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequatur dolore doloremque, eius eum fuga id modi pariatur quasi tenetur. Culpa, dolore eaque error excepturi magni</p>
+                              <h2 class="colorlib-heading">{{$categories_content->category_name}}</h2>
+                                <p>{!!  $about_content->content_text!!}</p>
                           </div>
                       </div>
                   </div>
