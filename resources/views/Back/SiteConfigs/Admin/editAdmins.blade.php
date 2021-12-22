@@ -19,7 +19,7 @@
             <div><label>email</label> <br>
                 <input type="email" name="email" value="{{$user->email}}"> <br>
             </div>
-            <div><label>Şifre</label> <br>
+            <div><label>Şifre(Güncelleme yaparken güvenlik açısından şifrenizi tekrar giriniz)</label> <br>
                 <input type="password" name="password" value="{{$user->password}}"> <br>
             </div>
             <button class="btn btn-success" type="submit">Ekle</button>
