@@ -71,11 +71,10 @@
                 <li><a href="#"><i class="icon-facebook2"></i></a></li>
                 <li><a href="#"><i class="icon-twitter2"></i></a></li>
                 <li><a href="#"><i class="icon-instagram"></i></a></li>
-                <li><a href="#"><i class="icon-linkedin2"></i></a></li>
             </ul>
             <small>&copy;
                 Copyright &copy;<script>document.write(new Date().getFullYear());</script>  AKSOYUCER Tüm Hakları Saklıdır
-                <div>Designed by <a href="">YUSUF ÇAĞLAR AKSOY</a> <br> Developed by <a href="">HAKTAN ÇAĞATAY ÜÇER</a></div>
+                <div>Designed by <a href="https://www.linkedin.com/in/yusuf-çağlar-aksoy-81b4b6207">YUSUF ÇAĞLAR AKSOY</a> <br> Developed by <a href="https://www.linkedin.com/in/çağatay-ucer-1a7b45196/">HAKTAN ÇAĞATAY ÜÇER</a></div>
 
             </small></p>
         </div>
