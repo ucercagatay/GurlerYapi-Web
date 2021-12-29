@@ -140,8 +140,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="animate-box" style="    padding: 15px;" data-animate-effect="fadeInRight">
-                        <h2 >{{$content->title}}</h2>
+                    <div class="animate-box" style="min-height: 50vh;background-color:white;padding: 15px;" data-animate-effect="fadeInRight; ">
+                        <div style="display: flex;align-items: center;justify-content: space-between">
+                            <h2>{{$content->title}}</h2>
+                            <a style="margin-bottom: 30px;width: 200px;height: 40px; background-size: cover; background-image: url({{asset("front/images/sahibinden.jpg")}})" href=""></a></div>
                         <p>{!! $content->content_text  !!}</p>
                     </div>
                 </div>

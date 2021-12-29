@@ -585,6 +585,8 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
     background-color: white;
     padding: 2vh;
     box-shadow: 0 0 20px #0000002b;
+    max-height: 260px;
+    overflow: hidden;
 }
 @media screen and (max-width: 768px) {
     .colorlib-blog,
@@ -930,7 +932,6 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
     overflow: hidden;
     position: relative;
     z-index: 1;
-    margin-bottom: 25px;
 }
 
 .blog-entry .blog-img img {
@@ -2166,4 +2167,14 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
         float: left;
         padding-top: 30px;
     }
+}
+.sorry{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sorry h1{
+    font-weight: 700;
+    color: #484848;
 }

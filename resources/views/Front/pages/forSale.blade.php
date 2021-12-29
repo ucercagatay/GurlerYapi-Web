@@ -82,7 +82,10 @@
                         @endforeach
                             @endif
                       @else
-                          <h1>Bu alanda çalışmalarımız en yakın sürede sizlerle</h1>
+                          <div class="sorry animate-box" data-animate-effect="fadeInLeft">
+                              <i class="far fa-frown fa-9x"></i>
+                              <h1>Bu alanda çalışmalarımız en yakın sürede sizlerle</h1>
+                          </div>
                       @endif
 
                   </div>
