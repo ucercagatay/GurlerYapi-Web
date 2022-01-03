@@ -323,6 +323,7 @@
                     @if(count($references)>0)
                     @foreach($references as $reference)
                     <div class="references">
+                            <p>{{$reference->reference_name}}</p>
                         <a href="{{$reference->reference_link}}"  target="_blank"><img src="{{asset($reference->photo)}}" alt="gelecek.jpg"></a>
                     </div>
                         @endforeach

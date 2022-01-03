@@ -15,7 +15,7 @@
             @foreach($references as $reference)
                 <tr>
                 <td>{{$reference->reference_name}}</td>
-                    <td>{{$reference->photo}}</td>
+                    <td><img src="{{asset($reference->photo)}}"></td>
                     <td>{{$reference->reference_link}}</td>
                     <td>{{$reference->updated_at}}</td>
                     <td style="display: flex"><form method="post" action="{{route('admin.deleteReference')}}">

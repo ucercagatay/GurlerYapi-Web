@@ -35,7 +35,7 @@ class SiteConfigController extends Controller
         $reference->reference_name = $request->reference_name;
         $reference->reference_link =$request->reference_link;
         if($request->hasFile('photo')){
-            $imageName = $request->reference_name . '.' .$request->photo->getClientOriginalExtension();
+            $imageName =  $request->id  . '.' .$request->photo->getClientOriginalExtension();
             $request->photo->move(public_path('uploads'), $imageName);
             $reference->photo = 'uploads/references' . $imageName;
         }
