@@ -86,7 +86,7 @@
                                         <i class="flaticon-worker"></i>
                                     </div>
                                     <div class="colorlib-text">
-                                        <h3>ÇALIŞMA ALANI 1</h3>
+                                        <h3>YAPI VE RESTORASYON</h3>
                                         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
                                     </div>
                                 </div>
@@ -96,7 +96,7 @@
                                         <i class="flaticon-sketch"></i>
                                     </div>
                                     <div class="colorlib-text">
-                                        <h3>ÇALIŞMA ALANI 2</h3>
+                                        <h3>ÜRETİM VE LOGİSTİK</h3>
                                         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
                                     </div>
                                 </div>
@@ -106,7 +106,7 @@
                                         <i class="flaticon-engineering"></i>
                                     </div>
                                     <div class="colorlib-text">
-                                        <h3>ÇALIŞMA ALANI 3</h3>
+                                        <h3>ULAŞTIRMA</h3>
                                         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@
                                         <i class="flaticon-crane"></i>
                                     </div>
                                     <div class="colorlib-text">
-                                        <h3>ÇALIŞMA ALANI 4</h3>
+                                        <h3>İŞ MAKİNALARI TEDARİĞİ VE ÜRETİMİ</h3>
                                         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
                                     </div>
                                 </div>
@@ -129,19 +129,19 @@
                                 <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
                                     <div class="services-img" style="background-image: url({{asset("front/images/services-1.jpg")}}) "></div>
                                     <div class="desc">
-                                        <h3>Çalışma Alanı 1</h3>
+                                        <h3>Yapı ve Restorasyon</h3>
                                     </div>
                                 </a>
                                 <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
                                     <div class="services-img" style="background-image: url({{asset("front/images/services-2.jpg")}})"></div>
                                     <div class="desc">
-                                        <h3>Çalışma Alanı 2</h3>
+                                        <h3>Üretim ve Logistik</h3>
                                     </div>
                                 </a>
                                 <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
                                     <div class="services-img" style="background-image: url({{asset("front/images/services-3.jpg")}})"></div>
                                     <div class="desc">
-                                        <h3>Çalışma Alanı 3</h3>
+                                        <h3>Tarım ve Hayvancılık</h3>
                                     </div>
                                 </a>
                             </div>
@@ -149,13 +149,13 @@
                                 <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
                                     <div class="services-img" style="background-image: url({{asset("front/images/services-4.jpg")}})"></div>
                                     <div class="desc">
-                                        <h3>Çalışma Alanı 4</h3>
+                                        <h3>Ulaştırma</h3>
                                     </div>
                                 </a>
                                 <a href="services.html" class="services-wrap animate-box" data-animate-effect="fadeInRight">
                                     <div class="services-img" style="background-image: url({{asset("front/images/services-5.jpg")}})"></div>
                                     <div class="desc">
-                                        <h3>Çalışma Alanı 5</h3>
+                                        <h3>İş Makinaları Tedariği Ve Üretimi </h3>
                                     </div>
                                 </a>
                             </div>

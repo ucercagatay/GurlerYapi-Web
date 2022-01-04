@@ -22,13 +22,55 @@
         .desc>a:hover{
             background-color: #282826 !important;
         }
+        .colorlib-references .references{
+            flex-direction: column;
+        }
+        .colorlib-references .references span{
+            width: 100% !important;
+            flex-direction: row !important;
+            justify-content: flex-start !important;
+            height: max-content !important;
+            margin:0 !important;
+        }
+        .colorlib-references .references span p{
+            width: auto !important;
+        }
+
     </style>
  @if($categories_content->category_name=='Referanslar')
-    @foreach($references as $reference)
-            <p>{{$reference->reference_name}}</p>
-            <img src="{{asset($reference->photo)}}">
-    @endforeach
-  @elseif($categories_content->category_name=='Hakkımızda')
+     <div id="colorlib-main">
+
+         <div class="colorlib-references">
+             <div class="colorlib-narrow-content">
+                 <div class="row">
+                     <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+                         <span class="heading-meta">Bize Destek Verenler</span>
+                         <h2 class="colorlib-heading animate-box">REFERANSLAR</h2>
+                     </div>
+                 </div>
+             </div>
+             <div class="colorlib-narrow-content animate-box" data-animate-effect="fadeInLeft">
+                 <div class="row">
+                     @if(count($references)>0)
+                         <div class="references">
+                             @foreach($references as $reference)
+                                 <span style="width: 200px; height: 300px; margin: 30px; display: flex; flex-direction: column; align-items: center; justify-content: space-between">
+                                    <a href="{{$reference->reference_link}}"  target="_blank"><img src="{{asset($reference->photo)}}" alt="gelecek.jpg"></a>
+                                    <p style="width: 200px; text-align: center;">{{$reference->reference_name}}</p>
+                                </span>
+                             @endforeach
+                         </div>
+                     @else
+                         <div class="references">
+                             <h1>Şu anda bakım aşamasındadır</h1>
+                         </div>
+                     @endif
+                 </div>
+             </div>
+         </div>
+     </div>
+
+ @elseif($categories_content->category_name=='Hakkımızda')
 
       <div id="colorlib-main">
           <div class="colorlib-forSale" >
