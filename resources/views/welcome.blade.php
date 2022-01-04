@@ -321,12 +321,14 @@
             <div class="colorlib-narrow-content animate-box" data-animate-effect="fadeInLeft">
                 <div class="row">
                     @if(count($references)>0)
-                    @foreach($references as $reference)
                     <div class="references">
-                            <p>{{$reference->reference_name}}</p>
-                        <a href="{{$reference->reference_link}}"  target="_blank"><img src="{{asset($reference->photo)}}" alt="gelecek.jpg"></a>
-                    </div>
+                        @foreach($references as $reference)
+                            <span style="width: 200px; height: 300px; margin: 30px; display: flex; flex-direction: column; align-items: center; justify-content: space-between">
+                                <a href="{{$reference->reference_link}}"  target="_blank"><img src="{{asset($reference->photo)}}" alt="gelecek.jpg"></a>
+                                <p style="width: 200px; text-align: center;">{{$reference->reference_name}}</p>
+                            </span>
                         @endforeach
+                    </div>
                     @else
                         <div class="references">
                             <h1>Şu anda bakım aşamasındadır</h1>

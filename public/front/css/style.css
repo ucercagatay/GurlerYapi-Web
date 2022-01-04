@@ -50,6 +50,7 @@ a:hover, a:active, a:focus {
 
 p {
     margin-bottom: 1.5em;
+    font-weight: 600;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1619,6 +1620,10 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
 .colorlib-references .references a{
     margin: 15px;
     width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .colorlib-references .references a img{
     filter: grayscale(100%);
