@@ -65,16 +65,14 @@ else {
             if($validator->fails()){
                 return Redirect::to(URL::previous().'#contact')->withErrors($validator,'message');
             }
-        DB::table('forms')->insert([
-            'name'=>$request->input('name'),
-            'surname'=>$request->input('surname'),
-            'email'=>$request->input('email'),
-            'phoneNumber'=>$request->input('phoneNumber'),
-            'option'=>$request->input('option'),
-            'message'=>$request->input('message'),
-            'created_at'=>now(),
-            'updated_at'=>now(),
-        ]);
+                $message = new FormModel();
+                $message->name = $request->name;
+                $message->surname = $request->surname;
+                $message->email = $request->email;
+                $message->phoneNumber = $request->phoneNumber;
+                $message->option = $request->option;
+                $message->message = $request->message;
+                $message->save();
         return back()->withSuccess(2);
     }
 //Form görüntüleme

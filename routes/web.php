@@ -18,6 +18,7 @@ Route::get('/test',[Controllers\AjaxController::class,'test'])->name('test');
 Route::get('/',[Controllers\PageController::class,'mainPage'])->name('mainpage');
 Route::post('/subPost',[Controllers\BackController::class,'getSub'])->name('subscriber');
 Route::post('/formpost',[Controllers\BackController::class,'newMessage'])->name('formPost');
+Route::post('/deletemessage',[Controllers\DeleteController::class,'deleteMessage'])->name('deletemessage');
 //Login
 Route::get('/login',[Controllers\PageController::class,'loginScreen'])->middleware('is_out')->name('logScreen');
 Route::post('/userpost',[Controllers\BackController::class,'loginControl'])->name('logpost');
@@ -68,6 +69,7 @@ Route::prefix('/admin')->name('admin.')->middleware('is_login')->group(function 
     Route::post('/updatePostConfig/{id}',[Controllers\UpdateController::class,'PostConfigPage'])->name('updateConfig');
     Route::get('/showMessages',[Controllers\SiteConfigController::class,'showMessages'])->name('showMessages');
     Route::get('/showSubscribers',[Controllers\SiteConfigController::class,'showSubscribers'])->name('showSubscribers');
+    Route::post('/deletesubs',[Controllers\DeleteController::class,'deleteSubscriber'])->name('deleteSubs');
 
 
 

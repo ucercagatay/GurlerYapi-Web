@@ -25,7 +25,11 @@
                     <td>{{$message->message}}</td>
                     <td>{{$message->created_at}}</td>
                     <td>
-                        <button class="btn btn-danger">Sil</button>
+                        <form method="post" action="{{route('deletemessage')}}">
+                            @csrf
+                            <input type="hidden" name="delete" value="{{$message->id}}">
+                            <button class="btn btn-danger" type="submit">SİL</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

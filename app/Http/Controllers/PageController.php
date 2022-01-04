@@ -43,7 +43,8 @@ public function categoryPage(Request $request,$id){
     $categories_content=CategoryModel::where('id',$request->id)->with('getContent')->first();
     $categories=CategoryModel::where('language','türkçe')->with('subCategory')->get();
     $about_content=ContentModel::where('title','Hakkımızda')->first();
-        return view('front.pages.forSale',compact('categories','categories_content','about_content'));
+    $references=ReferenceModel::all();
+        return view('front.pages.forSale',compact('categories','categories_content','about_content','references'));
 }
 
 public function contentPages(Request $request,$sub_category_id,$category_id,$sub_category_url){

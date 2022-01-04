@@ -14,7 +14,11 @@
                 <tr>
                     <td>{{$sub->email}}</td>
                     <td>{{$sub->created_at}}</td>
-                    <td><button class="btn btn-danger">Sil</button></td>
+                    <td>        <form method="post" action="{{route('admin.deleteSubs')}}">
+                            @csrf
+                            <input type="hidden" name="delete" value="{{$sub->id}}">
+                            <button class="btn btn-danger" type="submit">SİL</button>
+                        </form></td>
                 </tr>
             @endforeach
             </tbody>

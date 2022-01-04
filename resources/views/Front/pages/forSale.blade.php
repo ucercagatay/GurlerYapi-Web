@@ -23,7 +23,12 @@
             background-color: #282826 !important;
         }
     </style>
-  @if($categories_content->category_name=='Hakkımızda')
+ @if($categories_content->category_name=='Referanslar')
+    @foreach($references as $reference)
+            <p>{{$reference->reference_name}}</p>
+            <img src="{{asset($reference->photo)}}">
+    @endforeach
+  @elseif($categories_content->category_name=='Hakkımızda')
 
       <div id="colorlib-main">
           <div class="colorlib-forSale" >
